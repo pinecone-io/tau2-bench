@@ -1,0 +1,27 @@
+{
+  "dataset_id": "dataset_gpt52_nexus_full97_vs_published_alltools_20260802",
+  "kind": "comparison_dataset",
+  "domain": "banking_knowledge",
+  "ours_save": "probe_nexus_full97_t1_s300_20260802_190635",
+  "ours_source_repo": "pinecone-io/tau-bench-nexus",
+  "published_baseline": "gpt-5-2_sierra_2026-02-26 alltools",
+  "artifacts": [
+    "MANIFEST.md",
+    "SUMMARY.json",
+    "RUN_META.json",
+    "SCOREBOARD.md",
+    "SCOREBOARD_MSGLEVEL.md",
+    "per_task.csv",
+    "message_level_metrics.json",
+    "published_trial0_metrics.json",
+    "published_submission.json",
+    "tool_mix.json",
+    "results.json",
+    "runner.log",
+    "SOURCES.md"
+  ],
+  "created_utc": "2026-08-05T18:34:47.810128+00:00",
+  "primary_metric": "pass_1",
+  "nexus_usd_approx": 25,
+  "note": "pass1-only scoreboard; nexus $ ~25 aggregate estimate"
+}

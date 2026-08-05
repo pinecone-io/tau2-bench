@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 from typing import Generic, List, Optional, TypeVar
 
 from loguru import logger
@@ -29,16 +31,37 @@ In each turn you can either:
 You cannot do both at the same time.
 
 Try to be helpful and always follow the policy. Always make sure you generate valid JSON only.
+When <hard_rules> are present, they OVERRIDE conflicting softer guidance in <policy>. Follow them first.
 """.strip()
 
 SYSTEM_PROMPT = """
 <instructions>
 {agent_instruction}
 </instructions>
-<policy>
+{hard_rules_block}<policy>
 {domain_policy}
 </policy>
 """.strip()
+
+
+def _load_hard_rules_block() -> str:
+    """Optional high-priority rules injected above domain policy in the system prompt.
+
+    Set ``TAU2_AGENT_HARD_RULES`` to inline text, or ``TAU2_AGENT_HARD_RULES_FILE``
+    to a path. Empty if unset. Placed in the system message *before* <policy> so
+    models attend to execution checklists ahead of long policy prose.
+    """
+    text = os.environ.get("TAU2_AGENT_HARD_RULES", "").strip()
+    path = os.environ.get("TAU2_AGENT_HARD_RULES_FILE", "").strip()
+    if not text and path:
+        try:
+            text = Path(path).expanduser().read_text().strip()
+        except OSError as e:
+            logger.warning(f"TAU2_AGENT_HARD_RULES_FILE unreadable ({path}): {e}")
+            text = ""
+    if not text:
+        return ""
+    return f"<hard_rules>\n{text}\n</hard_rules>\n"
 
 
 class LLMAgentState(BaseModel):
@@ -78,7 +101,9 @@ class LLMAgent(
     @property
     def system_prompt(self) -> str:
         return SYSTEM_PROMPT.format(
-            domain_policy=self.domain_policy, agent_instruction=AGENT_INSTRUCTION
+            domain_policy=self.domain_policy,
+            agent_instruction=AGENT_INSTRUCTION,
+            hard_rules_block=_load_hard_rules_block(),
         )
 
     def get_init_state(

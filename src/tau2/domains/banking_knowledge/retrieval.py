@@ -15,6 +15,7 @@ Replaces the 18 ``RetrievalConfig`` subclasses in
 from __future__ import annotations
 
 import logging
+import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -35,6 +36,7 @@ from tau2.domains.banking_knowledge.retrieval_toolkits import (
     KnowledgeToolsWithGrep,
     KnowledgeToolsWithKBSearch,
     KnowledgeToolsWithKBSearchAndGrep,
+    KnowledgeToolsWithNexus,
     KnowledgeToolsWithShell,
 )
 from tau2.domains.banking_knowledge.tools import KnowledgeTools
@@ -322,6 +324,22 @@ class ShellSpec:
     file_format: str = "md"
 
 
+@dataclass
+class NexusSpec:
+    """Specification for a Pinecone Nexus knowledge-layer client.
+
+    ``context`` of ``None`` falls back to the ``NEXUS_CONTEXT`` environment
+    variable when the toolkit is built, so one registered variant can serve
+    any context (the experiment arm is selected per run).
+
+    ``url`` of ``None`` falls back to ``NEXUS_URL`` or the Nexus client default.
+    """
+
+    context: Optional[str] = None
+    url: Optional[str] = None
+    timeout_seconds: int = 600
+
+
 # ---------------------------------------------------------------------------
 # Reusable prompt builders
 # ---------------------------------------------------------------------------
@@ -402,6 +420,7 @@ class RetrievalVariant:
     kb_search_dense: Optional[PipelineSpec] = None  # AllTools: dense KB_search_dense
     grep: Optional[GrepSpec] = None  # None -> no grep tool
     shell: Optional[ShellSpec] = None  # None -> no shell tool
+    nexus: Optional[NexusSpec] = None  # None -> no KB_query tool
     supports_top_k: bool = False
 
 
@@ -446,6 +465,42 @@ RETRIEVAL_VARIANTS: Dict[str, RetrievalVariant] = {
         name="golden_retrieval",
         prompt_template=PROMPTS_DIR / "required_docs.md",
         build_prompt=golden_prompt,
+    ),
+    "nexus": RetrievalVariant(
+        name="nexus",
+        prompt_template=PROMPTS_DIR / "nexus.md",
+        build_prompt=standard_prompt,
+        nexus=NexusSpec(),
+    ),
+    "nexus_toolcat": RetrievalVariant(
+        name="nexus_toolcat",
+        prompt_template=PROMPTS_DIR / "nexus_toolcat.md",
+        build_prompt=standard_prompt,
+        nexus=NexusSpec(),
+    ),
+    "nexus_checklist": RetrievalVariant(
+        name="nexus_checklist",
+        prompt_template=PROMPTS_DIR / "nexus_checklist.md",
+        build_prompt=standard_prompt,
+        nexus=NexusSpec(),
+    ),
+    "nexus_multiturn": RetrievalVariant(
+        name="nexus_multiturn",
+        prompt_template=PROMPTS_DIR / "nexus_multiturn.md",
+        build_prompt=standard_prompt,
+        nexus=NexusSpec(),
+    ),
+    "nexus_checklist_s1": RetrievalVariant(
+        name="nexus_checklist_s1",
+        prompt_template=PROMPTS_DIR / "nexus_checklist_s1.md",
+        build_prompt=standard_prompt,
+        nexus=NexusSpec(),
+    ),
+    "nexus_checklist_s2": RetrievalVariant(
+        name="nexus_checklist_s2",
+        prompt_template=PROMPTS_DIR / "nexus_checklist_s2.md",
+        build_prompt=standard_prompt,
+        nexus=NexusSpec(),
     ),
     "qwen_embeddings_grep": RetrievalVariant(
         name="qwen_embeddings_grep",
@@ -643,6 +698,9 @@ def resolve_variant(
     grep_top_k: Optional[int] = None,
     case_sensitive: Optional[bool] = None,
     reranker_min_score: Optional[int] = None,
+    nexus_context: Optional[str] = None,
+    nexus_url: Optional[str] = None,
+    nexus_timeout: Optional[int] = None,
     **_extra: Any,
 ) -> RetrievalVariant:
     """Look up a variant by name and apply optional overrides.
@@ -679,6 +737,12 @@ def resolve_variant(
         variant.kb_search_bm25.reranker_min_score = reranker_min_score
     if reranker_min_score is not None and variant.kb_search_dense is not None:
         variant.kb_search_dense.reranker_min_score = reranker_min_score
+    if nexus_context is not None and variant.nexus is not None:
+        variant.nexus.context = nexus_context
+    if nexus_url is not None and variant.nexus is not None:
+        variant.nexus.url = nexus_url
+    if nexus_timeout is not None and variant.nexus is not None:
+        variant.nexus.timeout_seconds = nexus_timeout
 
     return variant
 
@@ -759,7 +823,16 @@ def build_tools(
         and variant.kb_search_dense is not None
         and variant.shell is not None
     )
-    if has_all_tools:
+    if variant.nexus is not None:
+        from tau2.domains.banking_knowledge.nexus_client import NexusClient
+
+        client = NexusClient(
+            context=variant.nexus.context,
+            url=variant.nexus.url,
+            timeout_seconds=variant.nexus.timeout_seconds,
+        )
+        tools = KnowledgeToolsWithNexus(db, client)
+    elif has_all_tools:
         bm25_pipeline = _create_kb_pipeline(variant.kb_search_bm25, knowledge_base)
         dense_pipeline = _create_kb_pipeline(variant.kb_search_dense, knowledge_base)
         sandbox = _create_sandbox(knowledge_base, variant.shell)
@@ -804,8 +877,25 @@ def build_policy(
 
     Delegates to the variant's ``build_prompt`` callable, then validates
     the result is non-empty.
+
+    Optional override: set ``TAU2_NEXUS_POLICY_FILE`` to a path to use that
+    template instead of the variant default (for frozen instruction packs
+    under ``configs/nexus_setups/``).
     """
-    policy = variant.build_prompt(variant.prompt_template, knowledge_base, task)
+    template_path = variant.prompt_template
+    override = os.environ.get("TAU2_NEXUS_POLICY_FILE", "").strip()
+    if override:
+        template_path = Path(override).expanduser()
+        if not template_path.is_file():
+            raise FileNotFoundError(
+                f"TAU2_NEXUS_POLICY_FILE not found: {template_path}"
+            )
+        logging.getLogger(__name__).info(
+            "Using TAU2_NEXUS_POLICY_FILE=%s (variant=%s)",
+            template_path,
+            variant.name,
+        )
+    policy = variant.build_prompt(template_path, knowledge_base, task)
 
     if variant.kb_search_bm25 is not None and variant.kb_search_dense is not None:
         dense_block = format_all_tools_dense_instructions(variant)

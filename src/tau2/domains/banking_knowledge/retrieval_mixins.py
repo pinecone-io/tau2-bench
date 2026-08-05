@@ -180,6 +180,35 @@ class ShellMixin(metaclass=ToolKitType):
         return stdout if stdout else "(no output)"
 
 
+class NexusQueryMixin(metaclass=ToolKitType):
+    """MixIn that provides the KB_query tool backed by a Pinecone Nexus context.
+
+    Expects ``self._nexus_client`` (a NexusClient) to be set by the
+    concrete class before any tool calls.
+    """
+
+    @is_tool(ToolType.READ)
+    def KB_query(self, question: str) -> str:
+        """Ask the bank's knowledge service a question about products, policies, fees, or procedures.
+
+        Returns a grounded answer with citations to the underlying policy
+        documents. Ask one specific, self-contained question per call, and
+        name the exact product (e.g. "What is the monthly maintenance fee
+        for the Beige business checking account and when is it waived?").
+        When a procedure involves internal tools, ask for the exact tool
+        name and arguments as written in the documents.
+
+        Args:
+            question: A specific natural-language question about bank
+                products, policies, fees, limits, eligibility, or procedures.
+
+        Returns:
+            A grounded answer with document citations.
+        """
+        task_id = getattr(self, "_task_id", None)
+        return self._nexus_client.query(question, task_id=task_id)
+
+
 class RewriteContextMixin(metaclass=ToolKitType):
     """MixIn that provides the rewrite_context tool for summarization."""
 

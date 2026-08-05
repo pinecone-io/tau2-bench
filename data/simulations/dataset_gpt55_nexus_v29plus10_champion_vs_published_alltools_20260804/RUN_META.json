@@ -1,0 +1,10 @@
+{
+  "dataset_id": "dataset_gpt55_nexus_v29plus10_champion_vs_published_alltools_20260804",
+  "kind": "comparison_dataset",
+  "domain": "banking_knowledge",
+  "primary_metric": "pass_1",
+  "ours_save": "leaderboard_nexus_full97_gpt55_t4_s300_c8_v29plus10_20260804_145207",
+  "ours_source_repo": "pinecone-io/tau-bench-nexus",
+  "published_baseline": "gpt-5-5_sierra_2026-05-05 alltools regraded pass1 46.39%",
+  "created_utc": "2026-08-05T18:37:48.429897+00:00"
+}

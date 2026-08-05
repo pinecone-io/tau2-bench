@@ -1,0 +1,63 @@
+{
+  "dataset_id": "dataset_gpt55_nexus_v29plus10_champion_vs_published_alltools_20260804",
+  "status": "DONE",
+  "published_utc": "2026-08-05T18:37:48.429897+00:00",
+  "primary_metric": "pass_1",
+  "ours": {
+    "repo_origin": "tau-bench-nexus",
+    "save": "leaderboard_nexus_full97_gpt55_t4_s300_c8_v29plus10_20260804_145207",
+    "label": "v29plus10 champion",
+    "agent": "openai/responses/gpt-5.5",
+    "agent_args": {
+      "reasoning_effort": "xhigh"
+    },
+    "user": "gpt-5.2",
+    "user_args": {
+      "reasoning_effort": "low"
+    },
+    "retrieval": "nexus_multiturn",
+    "context": "sk-fh-t028-v24-residual",
+    "hard_rules": "1-12 (no A1)",
+    "query_directive": "nq-multiturn-v7",
+    "query_model": "unpinned (server default)",
+    "trials": 4,
+    "seed": 300,
+    "concurrency": 8,
+    "pass1_pct": 46.13,
+    "t0_pass": 44,
+    "agent_usd_all": 189.7934,
+    "agent_usd_t0": 48.34,
+    "user_usd_all": 6.5121,
+    "nexus_q_all_trials": 1394,
+    "nexus_wall_s_all": 108343.8,
+    "nexus_usd": 56.57,
+    "doc": "tau-bench-nexus/docs/runs/nexus-v29plus10-full97-t4.md",
+    "nexus_q_t0": 372,
+    "nexus_usd_approx": 15.1,
+    "nexus_usd_per_query_rate": 0.040584,
+    "nexus_usd_method": "372 trial-1 KB_query \u00d7 ($25/616) = $15.10",
+    "agent_plus_nexus_usd_approx": 63.44,
+    "agent_usd_scorecard": 48.34
+  },
+  "published": {
+    "submission_dir": "gpt-5-5_sierra_2026-05-05",
+    "model": "GPT-5.5",
+    "retrieval": "alltools",
+    "trials": 4,
+    "seed": 300,
+    "board_pass1_pct_regraded": 46.39,
+    "submission_json_pass1_pct": 44.59,
+    "agent_usd_t0": 206.44,
+    "agent_usd_all_trials": 771.3503,
+    "s3_traj": "s3://sierra-tau-bench-public/submissions/gpt-5-5_sierra_2026-05-05/trajectories/gpt-5.5_xhigh_banking_knowledge_gpt-5.2_4trials.json",
+    "https_traj": "https://sierra-tau-bench-public.s3.amazonaws.com/submissions/gpt-5-5_sierra_2026-05-05/trajectories/gpt-5.5_xhigh_banking_knowledge_gpt-5.2_4trials.json",
+    "regrade_note": "Campaign board uses regraded pass\u00b9 46.39%; raw traj pass_hat\u00b9 lower; submission.json in repo may show 44.59%"
+  },
+  "delta_vs_board_pp": -0.26,
+  "h2h_t0": {
+    "both_pass": 27,
+    "both_fail": 44,
+    "we_win": 17,
+    "we_lose": 9
+  }
+}

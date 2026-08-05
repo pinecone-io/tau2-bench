@@ -80,6 +80,12 @@ def get_environment(
     tools = build_tools(
         variant, db, knowledge_base, read_log_allowlist=read_log_allowlist
     )
+    # Stamp task id for Nexus usage logging (NEXUS_USAGE_LOG per-query rows).
+    if task is not None:
+        try:
+            tools._task_id = task.id  # type: ignore[attr-defined]
+        except Exception:
+            pass
     user_tools = KnowledgeUserTools(db)
     policy = build_policy(variant, knowledge_base, task)
 

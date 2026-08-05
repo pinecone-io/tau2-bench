@@ -1,0 +1,681 @@
+{
+  "task_004": {
+    "score": 1.0,
+    "agent_cost": 4.7857095,
+    "user_cost": 0.0102116,
+    "tool_calls": 20,
+    "messages": 42
+  },
+  "task_001": {
+    "score": 1.0,
+    "agent_cost": 2.102265,
+    "user_cost": 0.00928585,
+    "tool_calls": 17,
+    "messages": 30
+  },
+  "task_003": {
+    "score": 0.0,
+    "agent_cost": 2.7833685000000004,
+    "user_cost": 0.00861595,
+    "tool_calls": 16,
+    "messages": 29
+  },
+  "task_010": {
+    "score": 1.0,
+    "agent_cost": 2.5061080000000007,
+    "user_cost": 0.0137557,
+    "tool_calls": 18,
+    "messages": 36
+  },
+  "task_006": {
+    "score": 1.0,
+    "agent_cost": 2.068198,
+    "user_cost": 0.0091301,
+    "tool_calls": 17,
+    "messages": 30
+  },
+  "task_002": {
+    "score": 1.0,
+    "agent_cost": 2.7540975000000003,
+    "user_cost": 0.00967295,
+    "tool_calls": 21,
+    "messages": 37
+  },
+  "task_012": {
+    "score": 1.0,
+    "agent_cost": 6.672770500000002,
+    "user_cost": 0.0059745,
+    "tool_calls": 28,
+    "messages": 53
+  },
+  "task_005": {
+    "score": 1.0,
+    "agent_cost": 6.7029435,
+    "user_cost": 0.009387,
+    "tool_calls": 19,
+    "messages": 47
+  },
+  "task_015": {
+    "score": 0.0,
+    "agent_cost": 4.993323500000002,
+    "user_cost": 0.021097650000000003,
+    "tool_calls": 25,
+    "messages": 60
+  },
+  "task_014": {
+    "score": 1.0,
+    "agent_cost": 5.211629500000001,
+    "user_cost": 0.014898100000000001,
+    "tool_calls": 27,
+    "messages": 55
+  },
+  "task_031": {
+    "score": 1.0,
+    "agent_cost": 2.8417125000000008,
+    "user_cost": 0.0135492,
+    "tool_calls": 16,
+    "messages": 35
+  },
+  "task_007": {
+    "score": 1.0,
+    "agent_cost": 5.703522,
+    "user_cost": 0.00944895,
+    "tool_calls": 31,
+    "messages": 51
+  },
+  "task_032": {
+    "score": 1.0,
+    "agent_cost": 3.861473,
+    "user_cost": 0.013619899999999999,
+    "tool_calls": 17,
+    "messages": 41
+  },
+  "task_033": {
+    "score": 1.0,
+    "agent_cost": 4.003483000000001,
+    "user_cost": 0.01256395,
+    "tool_calls": 16,
+    "messages": 37
+  },
+  "task_035": {
+    "score": 1.0,
+    "agent_cost": 1.3712380000000002,
+    "user_cost": 0.0044562000000000004,
+    "tool_calls": 9,
+    "messages": 19
+  },
+  "task_008": {
+    "score": 1.0,
+    "agent_cost": 10.271068500000002,
+    "user_cost": 0.0366583,
+    "tool_calls": 36,
+    "messages": 70
+  },
+  "task_021": {
+    "score": 0.0,
+    "agent_cost": 8.7763005,
+    "user_cost": 0.013942949999999999,
+    "tool_calls": 37,
+    "messages": 71
+  },
+  "task_019": {
+    "score": 0.0,
+    "agent_cost": 10.430530000000003,
+    "user_cost": 0.0204785,
+    "tool_calls": 42,
+    "messages": 78
+  },
+  "task_022": {
+    "score": 1.0,
+    "agent_cost": 11.800651500000003,
+    "user_cost": 0.03552255,
+    "tool_calls": 45,
+    "messages": 81
+  },
+  "task_016": {
+    "score": 1.0,
+    "agent_cost": 10.27499,
+    "user_cost": 0.016295650000000002,
+    "tool_calls": 47,
+    "messages": 86
+  },
+  "task_034": {
+    "score": 1.0,
+    "agent_cost": 2.6654485000000006,
+    "user_cost": 0.0348439,
+    "tool_calls": 18,
+    "messages": 52
+  },
+  "task_036": {
+    "score": 0.0,
+    "agent_cost": 8.330861000000002,
+    "user_cost": 0.022872850000000004,
+    "tool_calls": 32,
+    "messages": 64
+  },
+  "task_017": {
+    "score": 1.0,
+    "agent_cost": 11.759022000000002,
+    "user_cost": 0.013235249999999999,
+    "tool_calls": 43,
+    "messages": 79
+  },
+  "task_043": {
+    "score": 1.0,
+    "agent_cost": 9.072195,
+    "user_cost": 0.0112553,
+    "tool_calls": 27,
+    "messages": 59
+  },
+  "task_020": {
+    "score": 0.0,
+    "agent_cost": 8.088278,
+    "user_cost": 0.0177184,
+    "tool_calls": 34,
+    "messages": 64
+  },
+  "task_037": {
+    "score": 1.0,
+    "agent_cost": 11.051402999999999,
+    "user_cost": 0.025425049999999998,
+    "tool_calls": 32,
+    "messages": 69
+  },
+  "task_026": {
+    "score": 0.0,
+    "agent_cost": 8.653744000000003,
+    "user_cost": 0.021669550000000003,
+    "tool_calls": 35,
+    "messages": 67
+  },
+  "task_046": {
+    "score": 0.0,
+    "agent_cost": 7.094109000000001,
+    "user_cost": 0.00967225,
+    "tool_calls": 25,
+    "messages": 51
+  },
+  "task_018": {
+    "score": 0.0,
+    "agent_cost": 10.374622500000001,
+    "user_cost": 0.026858649999999998,
+    "tool_calls": 36,
+    "messages": 76
+  },
+  "task_038": {
+    "score": 0.0,
+    "agent_cost": 9.978078,
+    "user_cost": 0.01939875,
+    "tool_calls": 31,
+    "messages": 66
+  },
+  "task_050": {
+    "score": 1.0,
+    "agent_cost": 4.665622500000001,
+    "user_cost": 0.008144499999999999,
+    "tool_calls": 23,
+    "messages": 47
+  },
+  "task_045": {
+    "score": 0.0,
+    "agent_cost": 14.682475500000002,
+    "user_cost": 0.01232175,
+    "tool_calls": 33,
+    "messages": 68
+  },
+  "task_027": {
+    "score": 0.0,
+    "agent_cost": 11.2996455,
+    "user_cost": 0.02239405,
+    "tool_calls": 34,
+    "messages": 68
+  },
+  "task_023": {
+    "score": 0.0,
+    "agent_cost": 20.723637,
+    "user_cost": 0.0151767,
+    "tool_calls": 56,
+    "messages": 101
+  },
+  "task_044": {
+    "score": 1.0,
+    "agent_cost": 11.833140000000004,
+    "user_cost": 0.02344685,
+    "tool_calls": 48,
+    "messages": 88
+  },
+  "task_051": {
+    "score": 1.0,
+    "agent_cost": 8.494673,
+    "user_cost": 0.015253699999999999,
+    "tool_calls": 39,
+    "messages": 76
+  },
+  "task_047": {
+    "score": 1.0,
+    "agent_cost": 13.2205755,
+    "user_cost": 0.0185787,
+    "tool_calls": 42,
+    "messages": 84
+  },
+  "task_028": {
+    "score": 0.0,
+    "agent_cost": 11.968533500000001,
+    "user_cost": 0.0235907,
+    "tool_calls": 54,
+    "messages": 92
+  },
+  "task_024": {
+    "score": 1.0,
+    "agent_cost": 10.095206000000003,
+    "user_cost": 0.014548100000000001,
+    "tool_calls": 36,
+    "messages": 64
+  },
+  "task_029": {
+    "score": 0.0,
+    "agent_cost": 11.689106,
+    "user_cost": 0.0263739,
+    "tool_calls": 44,
+    "messages": 83
+  },
+  "task_025": {
+    "score": 1.0,
+    "agent_cost": 10.182260000000005,
+    "user_cost": 0.025162900000000002,
+    "tool_calls": 31,
+    "messages": 59
+  },
+  "task_052": {
+    "score": 1.0,
+    "agent_cost": 14.769678000000006,
+    "user_cost": 0.0247205,
+    "tool_calls": 42,
+    "messages": 95
+  },
+  "task_041": {
+    "score": 1.0,
+    "agent_cost": 15.846748500000006,
+    "user_cost": 0.0580692,
+    "tool_calls": 48,
+    "messages": 83
+  },
+  "task_054": {
+    "score": 0.0,
+    "agent_cost": 12.609943500000002,
+    "user_cost": 0.0237454,
+    "tool_calls": 47,
+    "messages": 87
+  },
+  "task_039": {
+    "score": 0.0,
+    "agent_cost": 15.499803000000005,
+    "user_cost": 0.044267650000000006,
+    "tool_calls": 37,
+    "messages": 72
+  },
+  "task_053": {
+    "score": 0.0,
+    "agent_cost": 9.453246000000002,
+    "user_cost": 0.02149595,
+    "tool_calls": 44,
+    "messages": 84
+  },
+  "task_048": {
+    "score": 1.0,
+    "agent_cost": 27.22067700000001,
+    "user_cost": 0.041757100000000005,
+    "tool_calls": 69,
+    "messages": 137
+  },
+  "task_049": {
+    "score": 1.0,
+    "agent_cost": 31.139432500000005,
+    "user_cost": 0.040386500000000006,
+    "tool_calls": 59,
+    "messages": 128
+  },
+  "task_040": {
+    "score": 0.0,
+    "agent_cost": 22.447430500000007,
+    "user_cost": 0.04421305,
+    "tool_calls": 42,
+    "messages": 89
+  },
+  "task_057": {
+    "score": 1.0,
+    "agent_cost": 16.437212000000002,
+    "user_cost": 0.02763425,
+    "tool_calls": 50,
+    "messages": 102
+  },
+  "task_055": {
+    "score": 0.0,
+    "agent_cost": 20.455116000000004,
+    "user_cost": 0.03186995,
+    "tool_calls": 38,
+    "messages": 79
+  },
+  "task_070": {
+    "score": 1.0,
+    "agent_cost": 5.584150000000001,
+    "user_cost": 0.01518195,
+    "tool_calls": 23,
+    "messages": 46
+  },
+  "task_058": {
+    "score": 1.0,
+    "agent_cost": 10.717476000000001,
+    "user_cost": 0.02105705,
+    "tool_calls": 28,
+    "messages": 53
+  },
+  "task_071": {
+    "score": 0.0,
+    "agent_cost": 7.220746500000002,
+    "user_cost": 0.017680249999999998,
+    "tool_calls": 28,
+    "messages": 61
+  },
+  "task_062": {
+    "score": 0.0,
+    "agent_cost": 15.499368500000001,
+    "user_cost": 0.025231149999999997,
+    "tool_calls": 35,
+    "messages": 73
+  },
+  "task_061": {
+    "score": 0.0,
+    "agent_cost": 23.976073000000003,
+    "user_cost": 0.0261611,
+    "tool_calls": 46,
+    "messages": 90
+  },
+  "task_060": {
+    "score": 0.0,
+    "agent_cost": 14.091726000000005,
+    "user_cost": 0.01689065,
+    "tool_calls": 41,
+    "messages": 81
+  },
+  "task_056": {
+    "score": 1.0,
+    "agent_cost": 14.463746000000004,
+    "user_cost": 0.029783949999999997,
+    "tool_calls": 40,
+    "messages": 81
+  },
+  "task_076": {
+    "score": 1.0,
+    "agent_cost": 9.344654,
+    "user_cost": 0.014547049999999999,
+    "tool_calls": 27,
+    "messages": 53
+  },
+  "task_077": {
+    "score": 0.0,
+    "agent_cost": 21.8803255,
+    "user_cost": 0.023121349999999995,
+    "tool_calls": 47,
+    "messages": 106
+  },
+  "task_078": {
+    "score": 0.0,
+    "agent_cost": 13.405414000000007,
+    "user_cost": 0.01984955,
+    "tool_calls": 39,
+    "messages": 76
+  },
+  "task_073": {
+    "score": 1.0,
+    "agent_cost": 10.912308000000003,
+    "user_cost": 0.01348725,
+    "tool_calls": 37,
+    "messages": 69
+  },
+  "task_079": {
+    "score": 1.0,
+    "agent_cost": 15.199525,
+    "user_cost": 0.020243999999999998,
+    "tool_calls": 47,
+    "messages": 88
+  },
+  "task_075": {
+    "score": 1.0,
+    "agent_cost": 13.425747500000003,
+    "user_cost": 0.014119000000000001,
+    "tool_calls": 38,
+    "messages": 70
+  },
+  "task_072": {
+    "score": 0.0,
+    "agent_cost": 9.543479000000001,
+    "user_cost": 0.012528599999999999,
+    "tool_calls": 28,
+    "messages": 58
+  },
+  "task_059": {
+    "score": 0.0,
+    "agent_cost": 23.2688555,
+    "user_cost": 0.0175217,
+    "tool_calls": 44,
+    "messages": 81
+  },
+  "task_064": {
+    "score": 1.0,
+    "agent_cost": 20.953399500000003,
+    "user_cost": 0.026533149999999995,
+    "tool_calls": 43,
+    "messages": 79
+  },
+  "task_065": {
+    "score": 0.0,
+    "agent_cost": 16.634150500000004,
+    "user_cost": 0.014145950000000001,
+    "tool_calls": 45,
+    "messages": 83
+  },
+  "task_080": {
+    "score": 1.0,
+    "agent_cost": 22.050985000000008,
+    "user_cost": 0.02723175,
+    "tool_calls": 72,
+    "messages": 132
+  },
+  "task_066": {
+    "score": 0.0,
+    "agent_cost": 26.032061000000002,
+    "user_cost": 0.0195216,
+    "tool_calls": 47,
+    "messages": 85
+  },
+  "task_081": {
+    "score": 0.0,
+    "agent_cost": 32.61951000000002,
+    "user_cost": 0.0412391,
+    "tool_calls": 72,
+    "messages": 137
+  },
+  "task_085": {
+    "score": 0.0,
+    "agent_cost": 16.288046500000004,
+    "user_cost": 0.026726350000000003,
+    "tool_calls": 32,
+    "messages": 79
+  },
+  "task_087": {
+    "score": 0.0,
+    "agent_cost": 11.944927500000002,
+    "user_cost": 0.01789025,
+    "tool_calls": 41,
+    "messages": 80
+  },
+  "task_088": {
+    "score": 0.0,
+    "agent_cost": 12.9826675,
+    "user_cost": 0.020421099999999998,
+    "tool_calls": 36,
+    "messages": 70
+  },
+  "task_084": {
+    "score": 0.0,
+    "agent_cost": 13.756902500000002,
+    "user_cost": 0.027590849999999997,
+    "tool_calls": 40,
+    "messages": 74
+  },
+  "task_093": {
+    "score": 1.0,
+    "agent_cost": 6.1650545,
+    "user_cost": 0.007067549999999999,
+    "tool_calls": 24,
+    "messages": 52
+  },
+  "task_083": {
+    "score": 0.0,
+    "agent_cost": 13.859626000000004,
+    "user_cost": 0.027461700000000002,
+    "tool_calls": 38,
+    "messages": 70
+  },
+  "task_067": {
+    "score": 0.0,
+    "agent_cost": 31.022486000000008,
+    "user_cost": 0.02252145,
+    "tool_calls": 53,
+    "messages": 99
+  },
+  "task_063": {
+    "score": 0.0,
+    "agent_cost": 30.832961499999996,
+    "user_cost": 0.0209958,
+    "tool_calls": 58,
+    "messages": 101
+  },
+  "task_089": {
+    "score": 1.0,
+    "agent_cost": 16.021093,
+    "user_cost": 0.017138100000000003,
+    "tool_calls": 43,
+    "messages": 84
+  },
+  "task_098": {
+    "score": 1.0,
+    "agent_cost": 4.315283500000001,
+    "user_cost": 0.01203265,
+    "tool_calls": 28,
+    "messages": 53
+  },
+  "task_095": {
+    "score": 1.0,
+    "agent_cost": 7.137174000000002,
+    "user_cost": 0.00882525,
+    "tool_calls": 27,
+    "messages": 52
+  },
+  "task_097": {
+    "score": 0.0,
+    "agent_cost": 9.1473635,
+    "user_cost": 0.010503849999999999,
+    "tool_calls": 37,
+    "messages": 69
+  },
+  "task_094": {
+    "score": 1.0,
+    "agent_cost": 15.762713999999999,
+    "user_cost": 0.01174565,
+    "tool_calls": 33,
+    "messages": 64
+  },
+  "task_082": {
+    "score": 0.0,
+    "agent_cost": 11.288788500000004,
+    "user_cost": 0.027675199999999997,
+    "tool_calls": 43,
+    "messages": 76
+  },
+  "task_099": {
+    "score": 1.0,
+    "agent_cost": 8.892295500000003,
+    "user_cost": 0.010031000000000002,
+    "tool_calls": 41,
+    "messages": 71
+  },
+  "task_100": {
+    "score": 1.0,
+    "agent_cost": 10.333235000000002,
+    "user_cost": 0.009674700000000001,
+    "tool_calls": 38,
+    "messages": 66
+  },
+  "task_069": {
+    "score": 0.0,
+    "agent_cost": 39.314632499999995,
+    "user_cost": 0.058867550000000005,
+    "tool_calls": 82,
+    "messages": 148
+  },
+  "task_074": {
+    "score": 0.0,
+    "agent_cost": 16.716716500000004,
+    "user_cost": 0.01808485,
+    "tool_calls": 38,
+    "messages": 74
+  },
+  "task_068": {
+    "score": 0.0,
+    "agent_cost": 30.855935000000006,
+    "user_cost": 0.022262099999999996,
+    "tool_calls": 64,
+    "messages": 122
+  },
+  "task_092": {
+    "score": 0.0,
+    "agent_cost": 27.058696499999996,
+    "user_cost": 0.02379265,
+    "tool_calls": 55,
+    "messages": 107
+  },
+  "task_102": {
+    "score": 0.0,
+    "agent_cost": 14.194130500000004,
+    "user_cost": 0.020494599999999998,
+    "tool_calls": 44,
+    "messages": 84
+  },
+  "task_086": {
+    "score": 0.0,
+    "agent_cost": 17.1016945,
+    "user_cost": 0.031248700000000004,
+    "tool_calls": 57,
+    "messages": 106
+  },
+  "task_101": {
+    "score": 1.0,
+    "agent_cost": 11.115230500000003,
+    "user_cost": 0.0335776,
+    "tool_calls": 38,
+    "messages": 70
+  },
+  "task_090": {
+    "score": 0.0,
+    "agent_cost": 17.296801500000004,
+    "user_cost": 0.023497599999999997,
+    "tool_calls": 46,
+    "messages": 93
+  },
+  "task_096": {
+    "score": 1.0,
+    "agent_cost": 19.988941500000003,
+    "user_cost": 0.0078197,
+    "tool_calls": 63,
+    "messages": 107
+  },
+  "task_091": {
+    "score": 0.0,
+    "agent_cost": 59.580125000000024,
+    "user_cost": 0.0282163,
+    "tool_calls": 94,
+    "messages": 174
+  }
+}

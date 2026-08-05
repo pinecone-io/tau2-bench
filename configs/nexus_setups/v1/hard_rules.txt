@@ -1,0 +1,2 @@
+# No hard rules for v1 (feature did not exist on that stack).
+# Leave TAU2_AGENT_HARD_RULES_FILE unset.

@@ -1,0 +1,12 @@
+{
+  "pack": "leaderboard_nexus_full97_opus5_t1_s300_c8_v2_glm52q_20260805_165416",
+  "setup": "v2",
+  "context": "taubench-v2",
+  "agent": "claude-opus-5",
+  "query_model": "zai-org/GLM-5.2",
+  "pass": "46/97",
+  "pass_pct": 47.42,
+  "agent_cost_usd": 261.2,
+  "nexus_query_cost_usd": 136.2,
+  "nexus_queries": 461
+}

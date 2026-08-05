@@ -1,0 +1,21 @@
+{
+  "call_discoverable_agent_tool": 1800,
+  "KB_query": 1394,
+  "unlock_discoverable_agent_tool": 1069,
+  "call_discoverable_user_tool": 340,
+  "get_current_time": 320,
+  "log_verification": 316,
+  "get_user_information_by_name": 300,
+  "get_credit_card_accounts_by_user": 146,
+  "give_discoverable_user_tool": 92,
+  "get_credit_card_transactions_by_user": 85,
+  "transfer_to_human_agents": 76,
+  "apply_for_credit_card": 69,
+  "submit_referral": 31,
+  "request_human_agent_transfer": 31,
+  "get_referrals_by_user": 27,
+  "get_user_information_by_email": 17,
+  "get_user_information_by_id": 5,
+  "change_user_email": 4,
+  "submit_transaction": 2
+}

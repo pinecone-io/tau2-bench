@@ -21,12 +21,14 @@ from tau2.domains.banking_knowledge.retrieval_mixins import (
     KBSearchBm25AllToolsMixin,
     KBSearchDenseAllToolsMixin,
     KBSearchMixin,
+    NexusQueryMixin,
     ShellMixin,
 )
 from tau2.domains.banking_knowledge.tools import KnowledgeTools
 
 if TYPE_CHECKING:
     from tau2.domains.banking_knowledge.data_model import TransactionalDB
+    from tau2.domains.banking_knowledge.nexus_client import NexusClient
     from tau2.knowledge.pipeline import RetrievalPipeline
     from tau2.knowledge.sandbox_manager import SandboxManager
 
@@ -78,6 +80,17 @@ class KnowledgeToolsWithKBSearchAndGrep(KBSearchMixin, GrepMixin, KnowledgeTools
         super().__init__(db)
         self._kb_pipeline = kb_pipeline
         self._grep_pipeline = grep_pipeline
+
+
+class KnowledgeToolsWithNexus(NexusQueryMixin, KnowledgeTools):
+    """Base banking tools + KB_query backed by a Pinecone Nexus context.
+
+    Used by: nexus.
+    """
+
+    def __init__(self, db: "TransactionalDB", nexus_client: "NexusClient"):
+        super().__init__(db)
+        self._nexus_client = nexus_client
 
 
 class KnowledgeToolsWithShell(ShellMixin, KnowledgeTools):

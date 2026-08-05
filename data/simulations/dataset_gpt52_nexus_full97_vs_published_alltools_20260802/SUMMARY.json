@@ -1,0 +1,51 @@
+{
+  "dataset_id": "dataset_gpt52_nexus_full97_vs_published_alltools_20260802",
+  "status": "DONE",
+  "published_utc": "2026-08-05T18:37:48.429897+00:00",
+  "primary_metric": "pass_1",
+  "ours": {
+    "repo_origin": "tau-bench-nexus",
+    "save": "probe_nexus_full97_t1_s300_20260802_190635",
+    "agent": "gpt-5.2",
+    "agent_args": {
+      "reasoning_effort": "high"
+    },
+    "user": "gpt-5.2",
+    "user_args": {
+      "reasoning_effort": "low"
+    },
+    "retrieval": "nexus_multiturn",
+    "context": "sk-fh-t017-v20-product",
+    "trials": 1,
+    "seed": 300,
+    "concurrency": 2,
+    "pass1_pct": 36.08,
+    "agent_usd": 26.823,
+    "user_usd": 1.9755,
+    "nexus_usd_approx": 25.0,
+    "agent_plus_nexus_usd_approx": 51.82,
+    "nexus_q": 616,
+    "nexus_wall_s": 44819.3,
+    "nexus_usd_note": "Aggregate estimate; no NEXUS_USAGE_LOG; rate is era baseline for unpinned default query",
+    "nexus_usd_per_query_rate": 0.040584,
+    "nexus_usd_method": "616 queries \u00d7 $0.040584/q = $25.00"
+  },
+  "published": {
+    "submission_dir": "gpt-5-2_sierra_2026-02-26",
+    "model": "GPT-5.2",
+    "retrieval": "alltools",
+    "trials": 4,
+    "seed": 300,
+    "board_pass1_pct": 32.22,
+    "agent_usd_t0": 140.5162,
+    "agent_usd_all_trials": 493.5867,
+    "s3_traj": "s3://sierra-tau-bench-public/submissions/gpt-5-2_sierra_2026-02-26/trajectories/gpt-5.2_high_banking_knowledge_gpt-5.2_4trials.json"
+  },
+  "delta_vs_board_pp": 3.86,
+  "h2h_t0": {
+    "both_pass": 18,
+    "both_fail": 56,
+    "we_win": 17,
+    "we_lose": 6
+  }
+}

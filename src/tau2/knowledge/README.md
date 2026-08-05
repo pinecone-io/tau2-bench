@@ -36,6 +36,11 @@ Requirements: **sandbox-runtime** for `shell`, and an embedding API for dense se
 | `terminal_use_write` | `shell` | `sandbox-runtime` (see below) |
 | `alltools` | `KB_search_bm25`, `KB_search_dense`, `shell` | BM25 offline + OpenAI dense embeddings + sandbox-runtime |
 | `alltools-qwen` | `KB_search_bm25`, `KB_search_dense`, `shell` | BM25 offline + Qwen dense embeddings + sandbox-runtime |
+| **`nexus`** | **`KB_query`** | **`PINECONE_API_KEY` or `NEXUS_TOKEN` + `NEXUS_CONTEXT`** (see Nexus below) |
+| `nexus_toolcat` | `KB_query` | same as `nexus` (tool-catalog oriented prompt) |
+| `nexus_checklist` | `KB_query` | same as `nexus` (checklist prompt) |
+| `nexus_checklist_s1` / `s2` | `KB_query` | same as `nexus` (staged checklist prompts) |
+| `nexus_multiturn` | `KB_query` | same as `nexus` (multi-turn banking policy prompt) |
 
 The `bm25`, `openai_embeddings`, and `qwen_embeddings` configs can also be combined with:
 - `_reranker` suffix — adds an LLM reranker postprocessor (requires `OPENAI_API_KEY`)
@@ -45,6 +50,35 @@ The `bm25`, `openai_embeddings`, and `qwen_embeddings` configs can also be combi
 Note: `*_reranker` variants always require `OPENAI_API_KEY` for the pointwise LLM reranker, even when the base embedder uses a different provider (e.g. `qwen_embeddings_reranker` needs both `OPENROUTER_API_KEY` and `OPENAI_API_KEY`).
 
 ## Embedding Cache
+
+
+## Nexus retrieval (`nexus`, `nexus_toolcat`, `nexus_checklist*`, `nexus_multiturn`)
+
+These configs replace local RAG tools with a single **`KB_query`** tool that calls a
+Pinecone Nexus context (curated knowledge service). The agent asks natural-language
+questions; Nexus returns grounded answers + citations.
+
+| Env / kwarg | Role |
+|-------------|------|
+| `NEXUS_CONTEXT` or kwargs `nexus_context` | **Required.** Context slug |
+| `NEXUS_URL` or kwargs `nexus_url` | API base (default often `http://localhost` on CLO) |
+| `PINECONE_API_KEY` or `NEXUS_TOKEN` | Auth |
+| kwargs `nexus_timeout` | Poll timeout seconds (default 600) |
+| `NEXUS_QUERY_MODEL` | Optional server-side query model catalog id (e.g. `claude-sonnet-5`) |
+| `NEXUS_QUERY_DIRECTIVE` | Optional answer-shape text appended to every ask |
+| `TAU2_AGENT_HARD_RULES_FILE` | Optional path to critical agent rules injected above policy |
+
+```bash
+export NEXUS_URL=http://localhost
+export NEXUS_CONTEXT=taubench-v2
+export NEXUS_QUERY_MODEL=claude-sonnet-5
+export PINECONE_API_KEY=...
+
+tau2 run --domain banking_knowledge --retrieval-config nexus_multiturn \
+  --agent-llm claude-opus-5 --user-llm gpt-5.2 \
+  --num-trials 4 --seed 300 --max-concurrency 8
+```
+
 
 Embedding-based configs (`openai_embeddings*`, `qwen_embeddings*`, `alltools`, `alltools-qwen`) cache document embeddings on disk at `data/.embeddings_cache` (gitignored). This avoids re-computing embeddings on repeated runs. The cache is automatically invalidated when document content changes.
 

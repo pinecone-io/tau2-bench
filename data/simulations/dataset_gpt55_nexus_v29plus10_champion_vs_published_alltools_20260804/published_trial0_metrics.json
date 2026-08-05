@@ -1,0 +1,584 @@
+{
+  "task_033": {
+    "score": 0,
+    "agent_cost": 0.33761300000000005,
+    "tools": 9,
+    "msgs": 22
+  },
+  "task_012": {
+    "score": 0,
+    "agent_cost": 1.018771,
+    "tools": 11,
+    "msgs": 26
+  },
+  "task_001": {
+    "score": 1,
+    "agent_cost": 1.138741,
+    "tools": 14,
+    "msgs": 32
+  },
+  "task_081": {
+    "score": 0,
+    "agent_cost": 0.6265440000000001,
+    "tools": 10,
+    "msgs": 22
+  },
+  "task_015": {
+    "score": 0,
+    "agent_cost": 0.338403,
+    "tools": 8,
+    "msgs": 24
+  },
+  "task_035": {
+    "score": 1,
+    "agent_cost": 0.37842300000000006,
+    "tools": 10,
+    "msgs": 23
+  },
+  "task_002": {
+    "score": 1,
+    "agent_cost": 1.7820570000000002,
+    "tools": 19,
+    "msgs": 42
+  },
+  "task_004": {
+    "score": 1,
+    "agent_cost": 0.33952000000000004,
+    "tools": 6,
+    "msgs": 21
+  },
+  "task_010": {
+    "score": 1,
+    "agent_cost": 0.34378500000000006,
+    "tools": 11,
+    "msgs": 29
+  },
+  "task_076": {
+    "score": 0,
+    "agent_cost": 0.646045,
+    "tools": 15,
+    "msgs": 33
+  },
+  "task_036": {
+    "score": 1,
+    "agent_cost": 0.422225,
+    "tools": 11,
+    "msgs": 28
+  },
+  "task_014": {
+    "score": 1,
+    "agent_cost": 0.7762930000000001,
+    "tools": 14,
+    "msgs": 29
+  },
+  "task_031": {
+    "score": 1,
+    "agent_cost": 1.026257,
+    "tools": 16,
+    "msgs": 37
+  },
+  "task_032": {
+    "score": 0,
+    "agent_cost": 0.27755,
+    "tools": 4,
+    "msgs": 21
+  },
+  "task_006": {
+    "score": 1,
+    "agent_cost": 1.1233150000000003,
+    "tools": 11,
+    "msgs": 26
+  },
+  "task_087": {
+    "score": 0,
+    "agent_cost": 0.925268,
+    "tools": 23,
+    "msgs": 42
+  },
+  "task_005": {
+    "score": 1,
+    "agent_cost": 0.399468,
+    "tools": 9,
+    "msgs": 33
+  },
+  "task_017": {
+    "score": 1,
+    "agent_cost": 0.49152900000000005,
+    "tools": 16,
+    "msgs": 32
+  },
+  "task_021": {
+    "score": 1,
+    "agent_cost": 0.4442040000000001,
+    "tools": 15,
+    "msgs": 37
+  },
+  "task_003": {
+    "score": 1,
+    "agent_cost": 1.726546,
+    "tools": 16,
+    "msgs": 36
+  },
+  "task_043": {
+    "score": 1,
+    "agent_cost": 1.5016980000000006,
+    "tools": 30,
+    "msgs": 61
+  },
+  "task_046": {
+    "score": 0,
+    "agent_cost": 0.960501,
+    "tools": 21,
+    "msgs": 46
+  },
+  "task_050": {
+    "score": 1,
+    "agent_cost": 1.631592,
+    "tools": 24,
+    "msgs": 48
+  },
+  "task_099": {
+    "score": 1,
+    "agent_cost": 1.6845570000000003,
+    "tools": 18,
+    "msgs": 35
+  },
+  "task_045": {
+    "score": 0,
+    "agent_cost": 0.9699850000000002,
+    "tools": 22,
+    "msgs": 47
+  },
+  "task_023": {
+    "score": 1,
+    "agent_cost": 0.952892,
+    "tools": 23,
+    "msgs": 45
+  },
+  "task_072": {
+    "score": 0,
+    "agent_cost": 0.8094699999999999,
+    "tools": 15,
+    "msgs": 38
+  },
+  "task_018": {
+    "score": 1,
+    "agent_cost": 0.713947,
+    "tools": 27,
+    "msgs": 50
+  },
+  "task_070": {
+    "score": 0,
+    "agent_cost": 2.0012670000000004,
+    "tools": 20,
+    "msgs": 51
+  },
+  "task_100": {
+    "score": 1,
+    "agent_cost": 1.0837269999999999,
+    "tools": 24,
+    "msgs": 54
+  },
+  "task_016": {
+    "score": 1,
+    "agent_cost": 0.9290980000000001,
+    "tools": 15,
+    "msgs": 40
+  },
+  "task_007": {
+    "score": 0,
+    "agent_cost": 1.2235469999999997,
+    "tools": 12,
+    "msgs": 30
+  },
+  "task_073": {
+    "score": 0,
+    "agent_cost": 1.4394660000000001,
+    "tools": 26,
+    "msgs": 48
+  },
+  "task_026": {
+    "score": 0,
+    "agent_cost": 1.0289,
+    "tools": 20,
+    "msgs": 45
+  },
+  "task_047": {
+    "score": 1,
+    "agent_cost": 1.466385,
+    "tools": 29,
+    "msgs": 62
+  },
+  "task_098": {
+    "score": 0,
+    "agent_cost": 1.4886120000000003,
+    "tools": 20,
+    "msgs": 44
+  },
+  "task_028": {
+    "score": 0,
+    "agent_cost": 1.8105010000000001,
+    "tools": 31,
+    "msgs": 69
+  },
+  "task_025": {
+    "score": 1,
+    "agent_cost": 1.114291,
+    "tools": 13,
+    "msgs": 34
+  },
+  "task_054": {
+    "score": 0,
+    "agent_cost": 1.8123320000000003,
+    "tools": 28,
+    "msgs": 58
+  },
+  "task_093": {
+    "score": 1,
+    "agent_cost": 2.010472,
+    "tools": 31,
+    "msgs": 58
+  },
+  "task_053": {
+    "score": 0,
+    "agent_cost": 1.2561559999999998,
+    "tools": 31,
+    "msgs": 52
+  },
+  "task_019": {
+    "score": 0,
+    "agent_cost": 1.303205,
+    "tools": 30,
+    "msgs": 54
+  },
+  "task_079": {
+    "score": 0,
+    "agent_cost": 1.8182930000000002,
+    "tools": 40,
+    "msgs": 71
+  },
+  "task_037": {
+    "score": 0,
+    "agent_cost": 1.416137,
+    "tools": 26,
+    "msgs": 62
+  },
+  "task_051": {
+    "score": 1,
+    "agent_cost": 1.4391310000000004,
+    "tools": 37,
+    "msgs": 77
+  },
+  "task_058": {
+    "score": 0,
+    "agent_cost": 2.366569,
+    "tools": 32,
+    "msgs": 72
+  },
+  "task_089": {
+    "score": 1,
+    "agent_cost": 3.0105410000000004,
+    "tools": 34,
+    "msgs": 65
+  },
+  "task_060": {
+    "score": 0,
+    "agent_cost": 2.298343,
+    "tools": 39,
+    "msgs": 71
+  },
+  "task_024": {
+    "score": 0,
+    "agent_cost": 1.9371590000000003,
+    "tools": 18,
+    "msgs": 42
+  },
+  "task_020": {
+    "score": 0,
+    "agent_cost": 1.36927,
+    "tools": 29,
+    "msgs": 51
+  },
+  "task_052": {
+    "score": 1,
+    "agent_cost": 2.60902,
+    "tools": 40,
+    "msgs": 79
+  },
+  "task_041": {
+    "score": 0,
+    "agent_cost": 1.3690350000000002,
+    "tools": 40,
+    "msgs": 68
+  },
+  "task_008": {
+    "score": 1,
+    "agent_cost": 2.5172209999999997,
+    "tools": 26,
+    "msgs": 74
+  },
+  "task_066": {
+    "score": 0,
+    "agent_cost": 3.4867920000000003,
+    "tools": 32,
+    "msgs": 71
+  },
+  "task_075": {
+    "score": 0,
+    "agent_cost": 2.296243,
+    "tools": 23,
+    "msgs": 56
+  },
+  "task_027": {
+    "score": 0,
+    "agent_cost": 1.5454539999999999,
+    "tools": 27,
+    "msgs": 62
+  },
+  "task_048": {
+    "score": 1,
+    "agent_cost": 2.8113070000000002,
+    "tools": 46,
+    "msgs": 116
+  },
+  "task_085": {
+    "score": 0,
+    "agent_cost": 1.8139870000000002,
+    "tools": 29,
+    "msgs": 72
+  },
+  "task_044": {
+    "score": 1,
+    "agent_cost": 2.049174,
+    "tools": 36,
+    "msgs": 71
+  },
+  "task_082": {
+    "score": 0,
+    "agent_cost": 2.352442,
+    "tools": 31,
+    "msgs": 68
+  },
+  "task_039": {
+    "score": 0,
+    "agent_cost": 2.5264729999999993,
+    "tools": 36,
+    "msgs": 82
+  },
+  "task_071": {
+    "score": 1,
+    "agent_cost": 3.229824,
+    "tools": 33,
+    "msgs": 75
+  },
+  "task_034": {
+    "score": 0,
+    "agent_cost": 0.43908200000000003,
+    "tools": 12,
+    "msgs": 40
+  },
+  "task_061": {
+    "score": 0,
+    "agent_cost": 2.874904000000001,
+    "tools": 44,
+    "msgs": 82
+  },
+  "task_095": {
+    "score": 0,
+    "agent_cost": 2.793831,
+    "tools": 28,
+    "msgs": 64
+  },
+  "task_096": {
+    "score": 0,
+    "agent_cost": 2.629528,
+    "tools": 29,
+    "msgs": 63
+  },
+  "task_056": {
+    "score": 1,
+    "agent_cost": 3.4057850000000003,
+    "tools": 30,
+    "msgs": 76
+  },
+  "task_057": {
+    "score": 1,
+    "agent_cost": 3.613685,
+    "tools": 37,
+    "msgs": 82
+  },
+  "task_074": {
+    "score": 0,
+    "agent_cost": 2.11722,
+    "tools": 30,
+    "msgs": 56
+  },
+  "task_062": {
+    "score": 0,
+    "agent_cost": 3.2693040000000013,
+    "tools": 37,
+    "msgs": 89
+  },
+  "task_090": {
+    "score": 1,
+    "agent_cost": 3.798373,
+    "tools": 39,
+    "msgs": 76
+  },
+  "task_038": {
+    "score": 0,
+    "agent_cost": 2.719960000000001,
+    "tools": 31,
+    "msgs": 70
+  },
+  "task_077": {
+    "score": 0,
+    "agent_cost": 3.563565,
+    "tools": 53,
+    "msgs": 102
+  },
+  "task_101": {
+    "score": 0,
+    "agent_cost": 2.1224930000000004,
+    "tools": 29,
+    "msgs": 64
+  },
+  "task_078": {
+    "score": 0,
+    "agent_cost": 1.82528,
+    "tools": 32,
+    "msgs": 61
+  },
+  "task_040": {
+    "score": 1,
+    "agent_cost": 1.9421920000000004,
+    "tools": 31,
+    "msgs": 59
+  },
+  "task_067": {
+    "score": 0,
+    "agent_cost": 3.513143999999999,
+    "tools": 41,
+    "msgs": 90
+  },
+  "task_055": {
+    "score": 1,
+    "agent_cost": 4.373844,
+    "tools": 37,
+    "msgs": 98
+  },
+  "task_102": {
+    "score": 0,
+    "agent_cost": 1.9157600000000004,
+    "tools": 25,
+    "msgs": 55
+  },
+  "task_086": {
+    "score": 0,
+    "agent_cost": 2.468737,
+    "tools": 32,
+    "msgs": 78
+  },
+  "task_094": {
+    "score": 0,
+    "agent_cost": 2.5046100000000004,
+    "tools": 34,
+    "msgs": 62
+  },
+  "task_080": {
+    "score": 0,
+    "agent_cost": 3.9025739999999995,
+    "tools": 60,
+    "msgs": 113
+  },
+  "task_022": {
+    "score": 0,
+    "agent_cost": 1.803773,
+    "tools": 31,
+    "msgs": 53
+  },
+  "task_059": {
+    "score": 1,
+    "agent_cost": 2.8750480000000005,
+    "tools": 20,
+    "msgs": 47
+  },
+  "task_065": {
+    "score": 0,
+    "agent_cost": 4.298053,
+    "tools": 35,
+    "msgs": 82
+  },
+  "task_092": {
+    "score": 0,
+    "agent_cost": 3.050897,
+    "tools": 43,
+    "msgs": 85
+  },
+  "task_029": {
+    "score": 0,
+    "agent_cost": 3.6838349999999997,
+    "tools": 50,
+    "msgs": 108
+  },
+  "task_084": {
+    "score": 0,
+    "agent_cost": 2.7287139999999996,
+    "tools": 34,
+    "msgs": 69
+  },
+  "task_064": {
+    "score": 0,
+    "agent_cost": 4.170943,
+    "tools": 37,
+    "msgs": 84
+  },
+  "task_097": {
+    "score": 0,
+    "agent_cost": 4.089262000000001,
+    "tools": 60,
+    "msgs": 94
+  },
+  "task_069": {
+    "score": 0,
+    "agent_cost": 6.153562000000003,
+    "tools": 71,
+    "msgs": 112
+  },
+  "task_068": {
+    "score": 0,
+    "agent_cost": 6.1352350000000015,
+    "tools": 51,
+    "msgs": 116
+  },
+  "task_083": {
+    "score": 0,
+    "agent_cost": 3.7290450000000006,
+    "tools": 37,
+    "msgs": 69
+  },
+  "task_088": {
+    "score": 0,
+    "agent_cost": 3.9405640000000006,
+    "tools": 46,
+    "msgs": 96
+  },
+  "task_063": {
+    "score": 0,
+    "agent_cost": 7.014960999999999,
+    "tools": 53,
+    "msgs": 118
+  },
+  "task_049": {
+    "score": 0,
+    "agent_cost": 2.848212,
+    "tools": 47,
+    "msgs": 106
+  },
+  "task_091": {
+    "score": 0,
+    "agent_cost": 6.109787,
+    "tools": 56,
+    "msgs": 124
+  }
+}
