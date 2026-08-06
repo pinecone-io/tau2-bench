@@ -1,0 +1,21 @@
+{
+  "label": "opus5+glm on v1 setup+context (STOPPED \u2014 early scores weak)",
+  "save": "leaderboard_nexus_full97_opus5_t1_s300_c8_v1_glm52q_20260805_200928",
+  "status": "partial/stopped",
+  "documented_utc": "2026-08-06T01:28:54.856288+00:00",
+  "setup": "v1",
+  "context": "taubench-v1",
+  "agent": "claude-opus-5",
+  "query": "zai-org/GLM-5.2",
+  "concurrency": 8,
+  "n": 19,
+  "pass_n": 10,
+  "pass_pct": 52.63,
+  "agent_usd": 11.6118,
+  "nexus_queries": 72,
+  "nexus_usd": 16.0554,
+  "query_models": {
+    "zai-org/GLM-5.2": 72
+  },
+  "nexus_usd_per_q": 0.223
+}

@@ -1,0 +1,10 @@
+{
+  "stopped_utc": "2026-08-05T20:20:28.054480+00:00",
+  "status": "STOPPED",
+  "n": 19,
+  "pass_n": 10,
+  "pass_pct": 52.63,
+  "agent_usd": 11.6118,
+  "nexus_queries": 72,
+  "nexus_usd": 16.0554
+}

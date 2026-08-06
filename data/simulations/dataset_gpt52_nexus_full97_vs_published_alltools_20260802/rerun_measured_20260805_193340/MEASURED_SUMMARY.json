@@ -1,0 +1,13 @@
+{
+  "stopped_utc": "2026-08-05T20:04:59.785955+00:00",
+  "status": "STOPPED",
+  "save_to": "probe_nexus_full97_gpt52_t1_s300_measured_20260805_193340",
+  "n": 20,
+  "pass_n": 17,
+  "pass_pct": 85.0,
+  "agent_usd": 2.1981,
+  "nexus_queries": 90,
+  "nexus_usd": 16.1597,
+  "agent_plus_nexus": 18.3578,
+  "query_model": "gemini-3.1-pro-preview"
+}

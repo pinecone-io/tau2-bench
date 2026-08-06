@@ -1,0 +1,29 @@
+{
+  "kind": "measured_rerun",
+  "original_save": "probe_nexus_full97_t1_s300_20260802_190635",
+  "context": "taubench-v1",
+  "context_id": "660c5c49-f73f-4baa-aaf5-2f9435fe1ce8",
+  "context_note": "renamed from sk-fh-t017-v20-product (same context id)",
+  "agent": "gpt-5.2",
+  "agent_args": {
+    "reasoning_effort": "high"
+  },
+  "user": "gpt-5.2",
+  "user_args": {
+    "reasoning_effort": "low"
+  },
+  "retrieval": "nexus_multiturn",
+  "query_directive": "nq-multiturn-v1",
+  "query_model": "unpinned",
+  "num_trials": 1,
+  "seed": 300,
+  "concurrency": 8,
+  "nexus_url": "http://localhost",
+  "save_to": "probe_nexus_full97_gpt52_t1_s300_measured_20260805_193340",
+  "usage_log": "nexus_usage.jsonl",
+  "started_utc": "2026-08-05T19:33:40Z",
+  "do_not_commit": true,
+  "note": "do not export AGENT_LLM_ARGS/USER_LLM_ARGS \u2014 legacy script appends extra } if set",
+  "auto_resume": true,
+  "restarted_c8_utc": "2026-08-05T19:45:16.461330+00:00"
+}

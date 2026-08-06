@@ -1,0 +1,21 @@
+{
+  "label": "gpt-5.2+glm+v2 (STOPPED early)",
+  "save": "leaderboard_nexus_full97_gpt52_t1_s300_c8_v2_glm52q_20260805_202028",
+  "status": "partial/stopped",
+  "documented_utc": "2026-08-06T01:28:54.874494+00:00",
+  "setup": "v2",
+  "context": "taubench-v2",
+  "agent": "gpt-5.2 high",
+  "query": "zai-org/GLM-5.2",
+  "concurrency": 8,
+  "n": 8,
+  "pass_n": 8,
+  "pass_pct": 100.0,
+  "agent_usd": 0.3015,
+  "nexus_queries": 13,
+  "nexus_usd": 5.673,
+  "query_models": {
+    "zai-org/GLM-5.2": 13
+  },
+  "nexus_usd_per_q": 0.4364
+}

@@ -1,0 +1,393 @@
+=== start 2026-08-05T20:20:28Z SETUP=v2 context=taubench-v2 gpt-5.2+glm52q c=8 ===
+=== nexus setup run ===
+setup=v2 pack=/home/harnesser/repos/tau2-bench/configs/nexus_setups/v2
+policy=/home/harnesser/repos/tau2-bench/configs/nexus_setups/v2/policy.md
+hard_rules=/home/harnesser/repos/tau2-bench/configs/nexus_setups/v2/hard_rules.txt
+context=taubench-v2 url=http://localhost query_model=zai-org/GLM-5.2
+directive_bytes=2563
+agent=gpt-5.2 {"reasoning_effort":"high"}
+user=gpt-5.2 {"reasoning_effort":"low"}
+trials=1 seed=300 concurrency=8 tasks=ALL
+save-to=leaderboard_nexus_full97_gpt52_t1_s300_c8_v2_glm52q_20260805_202028
+repo=/home/harnesser/repos/tau2-bench rev=6f7eb1b
+2026-08-05 20:20:28.534 | INFO     | tau2.utils.utils:<module>:28 - Using data directory from source: /home/harnesser/repos/tau2-bench/data
+2026-08-05 20:20:29.771 | INFO     | tau2.utils.llm_utils:<module>:102 - LiteLLM: Cache is disabled
+2026-08-05 20:20:29.889 | DEBUG    | tau2.registry:<module>:281 - Registering default components...
+2026-08-05 20:20:29.890 | DEBUG    | tau2.registry:<module>:292 - Voice dependencies not installed, skipping voice user registration
+2026-08-05 20:20:29.891 | DEBUG    | tau2.registry:<module>:350 - Default components registered successfully. Registry info: {
+  "domains": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ],
+  "agents": [
+    "llm_agent",
+    "llm_agent_gt",
+    "llm_agent_solo",
+    "discrete_time_audio_native_agent"
+  ],
+  "users": [
+    "user_simulator",
+    "dummy_user"
+  ],
+  "task_sets": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom_full",
+    "telecom_small",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ]
+}
+╭────────────────────────── Simulation Configuration ──────────────────────────╮
+│ Domain: banking_knowledge  Task Set: Default  Tasks: All                     │
+│ Trials: 1  Max Steps: 200  Max Errors: 10                                    │
+│                                                                              │
+│ Agent: llm_agent → gpt-5.2                                                   │
+│ User:  user_simulator → gpt-5.2                                              │
+│                                                                              │
+│ Save: leaderboard_nexus_full97_gpt52_t1_s300_c8_v2_glm52q_20260805_202028    │
+│ Concurrency: 8  Verbose: False                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+🔄 Loading documents...
+✅ Loaded 698 documents
+2026-08-05 20:20:29.958 | INFO     | tau2.runner.checkpoint:try_resume:73 - Saving simulation batch to /home/harnesser/repos/tau2-bench/data/simulations/leaderboard_nexus_full97_gpt52_t1_s300_c8_v2_glm52q_20260805_202028/results.json
+
+0/97 (trial 1/1). Running task task_001, trial 1
+2026-08-05 20:20:29.966 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_001, Agent: llm_agent, User: user_simulator
+
+2/97 (trial 1/1). Running task task_003, trial 1
+2026-08-05 20:20:29.967 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_003, Agent: llm_agent, User: user_simulator
+
+1/97 (trial 1/1). Running task task_002, trial 1
+2026-08-05 20:20:29.969 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_002, Agent: llm_agent, User: user_simulator
+
+3/97 (trial 1/1). Running task task_004, trial 1
+2026-08-05 20:20:29.969 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_004, Agent: llm_agent, User: user_simulator
+
+4/97 (trial 1/1). Running task task_005, trial 1
+2026-08-05 20:20:29.973 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_005, Agent: llm_agent, User: user_simulator
+
+6/97 (trial 1/1). Running task task_007, trial 1
+2026-08-05 20:20:29.975 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_007, Agent: llm_agent, User: user_simulator
+
+5/97 (trial 1/1). Running task task_006, trial 1
+2026-08-05 20:20:29.978 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_006, Agent: llm_agent, User: user_simulator
+
+7/97 (trial 1/1). Running task task_008, trial 1
+2026-08-05 20:20:29.978 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_008, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:20:30.249 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:20:30.284 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:20:30.299 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:20:30.317 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:20:30.332 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:20:30.349 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:20:30.365 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:20:30.387 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+Status: 0/97 complete. Avg reward: N/A. 8 running: task_001.0(30s), 
+task_003.0(30s), task_002.0(30s), task_004.0(30s), task_005.0(30s), 
+task_007.0(30s), task_006.0(30s), task_008.0(30s)
+2026-08-05 20:21:16.352 | INFO     | tau2.runner.simulation:run_simulation:87 - Simulation complete: domain=banking_knowledge, task=task_002, reward=1.0
+
+2026-08-05 20:21:16.352 | INFO     | tau2.runner.batch:run_single_task:452 - FINISHED SIMULATION: Domain: banking_knowledge, Task: task_002, Reward: 1.0
+
+╭──────────────────────────── Simulation Overview ─────────────────────────────╮
+│ Task ID: task_002                                                            │
+│ Trial: 0                                                                     │
+│ Duration: 45.94s                                                             │
+│ Mode: half_duplex                                                            │
+│ Termination Reason: TerminationReason.USER_STOP                              │
+│ Agent Cost: $0.0106                                                          │
+│ User Cost: $0.0065                                                           │
+│ Reward: ✅ 1.0000 (DB: 1.0)                                                  │
+│                                                                              │
+│ DB Check:✅ 1.0                                                              │
+│                                                                              │
+│ Action Checks:                                                               │
+│ - 0: user apply_for_credit_card [write] ✅ 1.0                               │
+│                                                                              │
+│ Partial Action Reward: 1/1 (100.0%)                                          │
+│   Write: 1/1 (100.0%)                                                        │
+│                                                                              │
+│ Additional Info:                                                             │
+│ env: None                                                                    │
+│ nl: None                                                                     │
+│ communicate: {'note': 'No communicate_info to evaluate'}                     │
+│ action: None                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+8/97 (trial 1/1). Running task task_010, trial 1
+2026-08-05 20:21:16.375 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_010, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:21:16.400 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+Status: 1/97 complete. Avg reward: 1.00 (N=1). 8 running: task_001.0(60s), 
+task_003.0(60s), task_004.0(60s), task_005.0(60s), task_007.0(60s), 
+task_006.0(60s), task_008.0(60s), task_010.0(14s)
+Status: 1/97 complete. Avg reward: 1.00 (N=1). 8 running: task_001.0(90s), 
+task_003.0(90s), task_004.0(90s), task_005.0(90s), task_007.0(90s), 
+task_006.0(90s), task_008.0(90s), task_010.0(44s)
+2026-08-05 20:22:01.289 | INFO     | tau2.runner.simulation:run_simulation:87 - Simulation complete: domain=banking_knowledge, task=task_001, reward=1.0
+
+2026-08-05 20:22:01.289 | INFO     | tau2.runner.batch:run_single_task:452 - FINISHED SIMULATION: Domain: banking_knowledge, Task: task_001, Reward: 1.0
+
+╭──────────────────────────── Simulation Overview ─────────────────────────────╮
+│ Task ID: task_001                                                            │
+│ Trial: 0                                                                     │
+│ Duration: 90.84s                                                             │
+│ Mode: half_duplex                                                            │
+│ Termination Reason: TerminationReason.USER_STOP                              │
+│ Agent Cost: $0.0142                                                          │
+│ User Cost: $0.0097                                                           │
+│ Reward: ✅ 1.0000 (DB: 1.0)                                                  │
+│                                                                              │
+│ DB Check:✅ 1.0                                                              │
+│                                                                              │
+│ Action Checks:                                                               │
+│ - 0: user apply_for_credit_card [write] ✅ 1.0                               │
+│                                                                              │
+│ Partial Action Reward: 1/1 (100.0%)                                          │
+│   Write: 1/1 (100.0%)                                                        │
+│                                                                              │
+│ Additional Info:                                                             │
+│ env: None                                                                    │
+│ nl: None                                                                     │
+│ communicate: {'note': 'No communicate_info to evaluate'}                     │
+│ action: None                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+9/97 (trial 1/1). Running task task_012, trial 1
+2026-08-05 20:22:01.315 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_012, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:22:01.341 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:22:01.912 | INFO     | tau2.runner.simulation:run_simulation:87 - Simulation complete: domain=banking_knowledge, task=task_006, reward=1.0
+
+2026-08-05 20:22:01.913 | INFO     | tau2.runner.batch:run_single_task:452 - FINISHED SIMULATION: Domain: banking_knowledge, Task: task_006, Reward: 1.0
+
+╭──────────────────────────── Simulation Overview ─────────────────────────────╮
+│ Task ID: task_006                                                            │
+│ Trial: 0                                                                     │
+│ Duration: 91.53s                                                             │
+│ Mode: half_duplex                                                            │
+│ Termination Reason: TerminationReason.USER_STOP                              │
+│ Agent Cost: $0.0150                                                          │
+│ User Cost: $0.0084                                                           │
+│ Reward: ✅ 1.0000 (DB: 1.0)                                                  │
+│                                                                              │
+│ DB Check:✅ 1.0                                                              │
+│                                                                              │
+│ Action Checks:                                                               │
+│ - 0: user apply_for_credit_card [write] ✅ 1.0                               │
+│                                                                              │
+│ Partial Action Reward: 1/1 (100.0%)                                          │
+│   Write: 1/1 (100.0%)                                                        │
+│                                                                              │
+│ Additional Info:                                                             │
+│ env: None                                                                    │
+│ nl: None                                                                     │
+│ communicate: {'note': 'No communicate_info to evaluate'}                     │
+│ action: None                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+10/97 (trial 1/1). Running task task_014, trial 1
+2026-08-05 20:22:01.948 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_014, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:22:01.974 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+Status: 3/97 complete. Avg reward: 1.00 (N=3). 8 running: task_003.0(120s), 
+task_004.0(120s), task_005.0(120s), task_007.0(120s), task_008.0(120s), 
+task_010.0(74s), task_012.0(29s), task_014.0(28s)
+2026-08-05 20:22:35.283 | INFO     | tau2.runner.simulation:run_simulation:87 - Simulation complete: domain=banking_knowledge, task=task_007, reward=1.0
+
+2026-08-05 20:22:35.283 | INFO     | tau2.runner.batch:run_single_task:452 - FINISHED SIMULATION: Domain: banking_knowledge, Task: task_007, Reward: 1.0
+
+╭──────────────────────────── Simulation Overview ─────────────────────────────╮
+│ Task ID: task_007                                                            │
+│ Trial: 0                                                                     │
+│ Duration: 124.83s                                                            │
+│ Mode: half_duplex                                                            │
+│ Termination Reason: TerminationReason.USER_STOP                              │
+│ Agent Cost: $0.0170                                                          │
+│ User Cost: $0.0046                                                           │
+│ Reward: ✅ 1.0000 (DB: 1.0)                                                  │
+│                                                                              │
+│ DB Check:✅ 1.0                                                              │
+│                                                                              │
+│ Action Checks:                                                               │
+│ - 0: user apply_for_credit_card [write] ✅ 1.0                               │
+│                                                                              │
+│ Partial Action Reward: 1/1 (100.0%)                                          │
+│   Write: 1/1 (100.0%)                                                        │
+│                                                                              │
+│ Additional Info:                                                             │
+│ env: None                                                                    │
+│ nl: None                                                                     │
+│ communicate: {'note': 'No communicate_info to evaluate'}                     │
+│ action: None                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+11/97 (trial 1/1). Running task task_015, trial 1
+2026-08-05 20:22:35.310 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_015, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:22:35.335 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+Status: 4/97 complete. Avg reward: 1.00 (N=4). 8 running: task_003.0(150s), 
+task_004.0(150s), task_005.0(150s), task_008.0(150s), task_010.0(104s), 
+task_012.0(59s), task_014.0(58s), task_015.0(25s)
+2026-08-05 20:23:05.590 | INFO     | tau2.runner.simulation:run_simulation:87 - Simulation complete: domain=banking_knowledge, task=task_003, reward=1.0
+
+2026-08-05 20:23:05.590 | INFO     | tau2.runner.batch:run_single_task:452 - FINISHED SIMULATION: Domain: banking_knowledge, Task: task_003, Reward: 1.0
+
+╭──────────────────────────── Simulation Overview ─────────────────────────────╮
+│ Task ID: task_003                                                            │
+│ Trial: 0                                                                     │
+│ Duration: 155.19s                                                            │
+│ Mode: half_duplex                                                            │
+│ Termination Reason: TerminationReason.USER_STOP                              │
+│ Agent Cost: $0.0310                                                          │
+│ User Cost: $0.0065                                                           │
+│ Reward: ✅ 1.0000 (DB: 1.0)                                                  │
+│                                                                              │
+│ DB Check:✅ 1.0                                                              │
+│                                                                              │
+│ Action Checks:                                                               │
+│ - 0: user apply_for_credit_card [write] ✅ 1.0                               │
+│                                                                              │
+│ Partial Action Reward: 1/1 (100.0%)                                          │
+│   Write: 1/1 (100.0%)                                                        │
+│                                                                              │
+│ Additional Info:                                                             │
+│ env: None                                                                    │
+│ nl: None                                                                     │
+│ communicate: {'note': 'No communicate_info to evaluate'}                     │
+│ action: None                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+12/97 (trial 1/1). Running task task_016, trial 1
+2026-08-05 20:23:05.617 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_016, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:23:05.643 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:23:15.388 | INFO     | tau2.runner.simulation:run_simulation:87 - Simulation complete: domain=banking_knowledge, task=task_004, reward=1.0
+
+2026-08-05 20:23:15.388 | INFO     | tau2.runner.batch:run_single_task:452 - FINISHED SIMULATION: Domain: banking_knowledge, Task: task_004, Reward: 1.0
+
+╭──────────────────────────── Simulation Overview ─────────────────────────────╮
+│ Task ID: task_004                                                            │
+│ Trial: 0                                                                     │
+│ Duration: 165.04s                                                            │
+│ Mode: half_duplex                                                            │
+│ Termination Reason: TerminationReason.USER_STOP                              │
+│ Agent Cost: $0.0837                                                          │
+│ User Cost: $0.0166                                                           │
+│ Reward: ✅ 1.0000 (ACTION: 1.0)                                              │
+│                                                                              │
+│ DB Check:✅ 1.0                                                              │
+│                                                                              │
+│ Action Checks:                                                               │
+│ - 0: agent transfer_to_human_agents [generic] ✅ 1.0                         │
+│                                                                              │
+│ Partial Action Reward: 1/1 (100.0%)                                          │
+│                                                                              │
+│ Additional Info:                                                             │
+│ env: None                                                                    │
+│ nl: None                                                                     │
+│ communicate: {'note': 'No communicate_info to evaluate'}                     │
+│ action: None                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+13/97 (trial 1/1). Running task task_017, trial 1
+2026-08-05 20:23:15.418 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_017, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:23:15.444 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+Status: 6/97 complete. Avg reward: 1.00 (N=6). 8 running: task_005.0(180s), 
+task_008.0(180s), task_010.0(134s), task_012.0(89s), task_014.0(88s), 
+task_015.0(55s), task_016.0(24s), task_017.0(15s)
+2026-08-05 20:23:58.223 | INFO     | tau2.runner.simulation:run_simulation:87 - Simulation complete: domain=banking_knowledge, task=task_014, reward=1.0
+
+2026-08-05 20:23:58.223 | INFO     | tau2.runner.batch:run_single_task:452 - FINISHED SIMULATION: Domain: banking_knowledge, Task: task_014, Reward: 1.0
+
+╭──────────────────────────── Simulation Overview ─────────────────────────────╮
+│ Task ID: task_014                                                            │
+│ Trial: 0                                                                     │
+│ Duration: 116.18s                                                            │
+│ Mode: half_duplex                                                            │
+│ Termination Reason: TerminationReason.USER_STOP                              │
+│ Agent Cost: $0.0248                                                          │
+│ User Cost: $0.0045                                                           │
+│ Reward: ✅ 1.0000 (ACTION: 1.0)                                              │
+│                                                                              │
+│ DB Check:✅ 1.0                                                              │
+│                                                                              │
+│ Action Checks:                                                               │
+│ - 0: agent transfer_to_human_agents [generic] ✅ 1.0                         │
+│                                                                              │
+│ Partial Action Reward: 1/1 (100.0%)                                          │
+│                                                                              │
+│ Additional Info:                                                             │
+│ env: None                                                                    │
+│ nl: None                                                                     │
+│ communicate: {'note': 'No communicate_info to evaluate'}                     │
+│ action: None                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+14/97 (trial 1/1). Running task task_018, trial 1
+2026-08-05 20:23:58.252 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_018, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:23:58.278 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:23:59.525 | INFO     | tau2.runner.simulation:run_simulation:87 - Simulation complete: domain=banking_knowledge, task=task_005, reward=1.0
+
+2026-08-05 20:23:59.525 | INFO     | tau2.runner.batch:run_single_task:452 - FINISHED SIMULATION: Domain: banking_knowledge, Task: task_005, Reward: 1.0
+
+╭──────────────────────────── Simulation Overview ─────────────────────────────╮
+│ Task ID: task_005                                                            │
+│ Trial: 0                                                                     │
+│ Duration: 209.18s                                                            │
+│ Mode: half_duplex                                                            │
+│ Termination Reason: TerminationReason.USER_STOP                              │
+│ Agent Cost: $0.1051                                                          │
+│ User Cost: $0.0071                                                           │
+│ Reward: ✅ 1.0000 (DB: 1.0)                                                  │
+│                                                                              │
+│ DB Check:✅ 1.0                                                              │
+│                                                                              │
+│ Action Checks:                                                               │
+│ - 0: agent transfer_to_human_agents [generic] ✅ 1.0                         │
+│ - 1: agent log_verification [write] ✅ 1.0                                   │
+│ - 2: agent change_user_email [write] ✅ 1.0                                  │
+│                                                                              │
+│ Partial Action Reward: 3/3 (100.0%)                                          │
+│   Write: 2/2 (100.0%)                                                        │
+│                                                                              │
+│ Additional Info:                                                             │
+│ env: None                                                                    │
+│ nl: None                                                                     │
+│ communicate: {'note': 'No communicate_info to evaluate'}                     │
+│ action: None                                                                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+15/97 (trial 1/1). Running task task_019, trial 1
+2026-08-05 20:23:59.554 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_019, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:23:59.579 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+Status: 8/97 complete. Avg reward: 1.00 (N=8). 8 running: task_008.0(210s), 
+task_010.0(164s), task_012.0(119s), task_015.0(85s), task_016.0(54s), 
+task_017.0(45s), task_018.0(2s), task_019.0(0s)

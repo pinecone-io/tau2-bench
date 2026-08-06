@@ -1,4 +1,7 @@
-# Banking Nexus — run log (tau2-bench)
+# Banking Nexus campaign — run log
+
+> **Latest handoff:** [`SESSION_HANDOFF_20260806.md`](./SESSION_HANDOFF_20260806.md) (scorecards, trial-1 scoring, partial experiments, pass¹ vs traj gap).
+
 
 **Repo:** [`pinecone-io/tau2-bench`](https://github.com/pinecone-io/tau2-bench) · branch **`nexus`**  
 **Base:** Sierra `main` (`1eceb04`) + single squash commit with Nexus harness  

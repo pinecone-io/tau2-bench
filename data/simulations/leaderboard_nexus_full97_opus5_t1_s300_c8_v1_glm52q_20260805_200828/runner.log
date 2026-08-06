@@ -1,0 +1,104 @@
+=== start 2026-08-05T20:08:28Z context=taubench-v1 opus5+glm52q c=8 ===
+=== nexus setup run ===
+setup=v2 pack=/home/harnesser/repos/tau2-bench/configs/nexus_setups/v2
+policy=/home/harnesser/repos/tau2-bench/configs/nexus_setups/v2/policy.md
+hard_rules=/home/harnesser/repos/tau2-bench/configs/nexus_setups/v2/hard_rules.txt
+context=taubench-v1 url=http://localhost query_model=zai-org/GLM-5.2
+directive_bytes=2563
+agent=claude-opus-5 {}
+user=gpt-5.2 {"reasoning_effort":"low"}
+trials=1 seed=300 concurrency=8 tasks=ALL
+save-to=leaderboard_nexus_full97_opus5_t1_s300_c8_v1_glm52q_20260805_200828
+repo=/home/harnesser/repos/tau2-bench rev=6f7eb1b
+2026-08-05 20:08:28.896 | INFO     | tau2.utils.utils:<module>:28 - Using data directory from source: /home/harnesser/repos/tau2-bench/data
+2026-08-05 20:08:30.112 | INFO     | tau2.utils.llm_utils:<module>:102 - LiteLLM: Cache is disabled
+2026-08-05 20:08:30.231 | DEBUG    | tau2.registry:<module>:281 - Registering default components...
+2026-08-05 20:08:30.232 | DEBUG    | tau2.registry:<module>:292 - Voice dependencies not installed, skipping voice user registration
+2026-08-05 20:08:30.232 | DEBUG    | tau2.registry:<module>:350 - Default components registered successfully. Registry info: {
+  "domains": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ],
+  "agents": [
+    "llm_agent",
+    "llm_agent_gt",
+    "llm_agent_solo",
+    "discrete_time_audio_native_agent"
+  ],
+  "users": [
+    "user_simulator",
+    "dummy_user"
+  ],
+  "task_sets": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom_full",
+    "telecom_small",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ]
+}
+╭────────────────────────── Simulation Configuration ──────────────────────────╮
+│ Domain: banking_knowledge  Task Set: Default  Tasks: All                     │
+│ Trials: 1  Max Steps: 200  Max Errors: 10                                    │
+│                                                                              │
+│ Agent: llm_agent → claude-opus-5                                             │
+│ User:  user_simulator → gpt-5.2                                              │
+│                                                                              │
+│ Save: leaderboard_nexus_full97_opus5_t1_s300_c8_v1_glm52q_20260805_200828    │
+│ Concurrency: 8  Verbose: False                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+🔄 Loading documents...
+✅ Loaded 698 documents
+2026-08-05 20:08:30.297 | INFO     | tau2.runner.checkpoint:try_resume:73 - Saving simulation batch to /home/harnesser/repos/tau2-bench/data/simulations/leaderboard_nexus_full97_opus5_t1_s300_c8_v1_glm52q_20260805_200828/results.json
+
+0/97 (trial 1/1). Running task task_001, trial 1
+2026-08-05 20:08:30.305 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_001, Agent: llm_agent, User: user_simulator
+
+1/97 (trial 1/1). Running task task_002, trial 1
+2026-08-05 20:08:30.308 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_002, Agent: llm_agent, User: user_simulator
+
+2/97 (trial 1/1). Running task task_003, trial 1
+2026-08-05 20:08:30.308 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_003, Agent: llm_agent, User: user_simulator
+
+3/97 (trial 1/1). Running task task_004, trial 1
+2026-08-05 20:08:30.312 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_004, Agent: llm_agent, User: user_simulator
+
+4/97 (trial 1/1). Running task task_005, trial 1
+2026-08-05 20:08:30.313 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_005, Agent: llm_agent, User: user_simulator
+
+5/97 (trial 1/1). Running task task_006, trial 1
+2026-08-05 20:08:30.318 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_006, Agent: llm_agent, User: user_simulator
+
+6/97 (trial 1/1). Running task task_007, trial 1
+7/97 (trial 1/1). Running task task_008, trial 1
+2026-08-05 20:08:30.318 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_008, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:08:30.318 | INFO     | tau2.runner.batch:run_single_task:390 - STARTING SIMULATION: Domain: banking_knowledge, Task: task_007, Agent: llm_agent, User: user_simulator
+
+2026-08-05 20:08:30.572 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:08:30.621 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:08:30.642 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:08:30.661 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:08:30.670 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:08:30.688 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:08:30.706 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+2026-08-05 20:08:30.725 | INFO     | tau2.orchestrator.orchestrator:_validate_mode_compatibility:477 - Orchestrator initialized in HALF_DUPLEX mode (turn-based) with agent=LLMAgent, user=UserSimulator
+
+Status: 0/97 complete. Avg reward: N/A. 8 running: task_001.0(30s), 
+task_002.0(30s), task_003.0(30s), task_004.0(30s), task_005.0(30s), 
+task_006.0(30s), task_007.0(30s), task_008.0(30s)
+WRONG_RUN_STOPPED 2026-08-05T20:09:28Z

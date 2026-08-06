@@ -1,0 +1,18 @@
+{
+  "kind": "opus5_glm52q_on_v1_context",
+  "comparison": "same as v2_glm52q full97 but NEXUS_CONTEXT=taubench-v1",
+  "prior_pack": "leaderboard_nexus_full97_opus5_t1_s300_c8_v2_glm52q_20260805_165416",
+  "setup_pack": "v2",
+  "context": "taubench-v1",
+  "agent": "claude-opus-5",
+  "query_model": "zai-org/GLM-5.2",
+  "retrieval": "nexus_multiturn",
+  "num_trials": 1,
+  "seed": 300,
+  "concurrency": 8,
+  "hard_rules": true,
+  "save_to": "leaderboard_nexus_full97_opus5_t1_s300_c8_v1_glm52q_20260805_200828",
+  "usage_log": "nexus_usage.jsonl",
+  "started_utc": "2026-08-05T20:08:28Z",
+  "do_not_commit": true
+}

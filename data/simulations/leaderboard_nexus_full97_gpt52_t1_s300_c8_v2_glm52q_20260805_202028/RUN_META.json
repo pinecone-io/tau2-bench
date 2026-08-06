@@ -1,0 +1,18 @@
+{
+  "kind": "gpt52_glm52q_v2_full97",
+  "setup": "v2",
+  "setup_pack": "configs/nexus_setups/v2",
+  "context": "taubench-v2",
+  "agent": "gpt-5.2",
+  "agent_args": {"reasoning_effort": "high"},
+  "query_model": "zai-org/GLM-5.2",
+  "retrieval": "nexus_multiturn",
+  "num_trials": 1,
+  "seed": 300,
+  "concurrency": 8,
+  "hard_rules": true,
+  "save_to": "leaderboard_nexus_full97_gpt52_t1_s300_c8_v2_glm52q_20260805_202028",
+  "usage_log": "nexus_usage.jsonl",
+  "started_utc": "2026-08-05T20:20:28Z",
+  "do_not_commit": true
+}

@@ -1,0 +1,2 @@
+=== start 2026-08-05T19:33:40Z ===
+context=taubench-v1 save=probe_nexus_full97_gpt52_t1_s300_measured_20260805_193340 usage=/home/harnesser/repos/tau2-bench/data/simulations/dataset_gpt52_nexus_full97_vs_published_alltools_20260802/rerun_measured_20260805_193340/nexus_usage.jsonl

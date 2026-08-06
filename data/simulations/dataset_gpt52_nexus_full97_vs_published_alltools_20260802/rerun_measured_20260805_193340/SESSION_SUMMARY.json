@@ -1,0 +1,21 @@
+{
+  "label": "gpt-5.2 measured re-run (STOPPED)",
+  "save": "probe_nexus_full97_gpt52_t1_s300_measured_20260805_193340",
+  "status": "STOPPED",
+  "documented_utc": "2026-08-06T01:29:44.858080+00:00",
+  "setup": "legacy gpt-5.2 knobs (high/low), nq-multiturn-v1",
+  "context": "taubench-v1 (renamed from sk-fh-t017-v20-product, same id 660c5c49\u2026)",
+  "query": "unpinned server default = gemini-3.1-pro-preview",
+  "concurrency": "2 then restarted 8 with --auto-resume",
+  "n": 20,
+  "pass_n": 17,
+  "pass_pct": 85.0,
+  "agent_usd": 2.1981,
+  "nexus_queries": 90,
+  "nexus_usd": 16.1597,
+  "nexus_usd_per_q": 0.1796,
+  "query_models": {
+    "gemini-3.1-pro-preview": 90
+  },
+  "agent_plus_nexus": 18.3578
+}

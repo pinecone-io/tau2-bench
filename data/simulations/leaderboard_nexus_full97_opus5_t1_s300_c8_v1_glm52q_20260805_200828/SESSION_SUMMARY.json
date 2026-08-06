@@ -1,0 +1,18 @@
+{
+  "label": "ABORTED: v2 instructions + v1 context (wrong stack)",
+  "save": "leaderboard_nexus_full97_opus5_t1_s300_c8_v1_glm52q_20260805_200828",
+  "status": "partial/stopped",
+  "documented_utc": "2026-08-06T01:28:54.869060+00:00",
+  "setup": "v2-wrong",
+  "context": "taubench-v1",
+  "n": 0,
+  "pass_n": 0,
+  "pass_pct": 0.0,
+  "agent_usd": 0,
+  "nexus_queries": 1,
+  "nexus_usd": 0.1831,
+  "query_models": {
+    "zai-org/GLM-5.2": 1
+  },
+  "nexus_usd_per_q": 0.1831
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "opus5_glm52q_full_v1_stack",
+  "setup": "v1",
+  "setup_pack": "configs/nexus_setups/v1",
+  "includes": ["policy.md", "query_directive.txt", "hard_rules OFF (SETUP_USE_HARD_RULES=0)"],
+  "context": "taubench-v1",
+  "agent": "claude-opus-5",
+  "query_model": "zai-org/GLM-5.2",
+  "retrieval": "nexus_multiturn",
+  "num_trials": 1,
+  "seed": 300,
+  "concurrency": 8,
+  "save_to": "leaderboard_nexus_full97_opus5_t1_s300_c8_v1_glm52q_20260805_200928",
+  "usage_log": "nexus_usage.jsonl",
+  "prior_aborted": "leaderboard_nexus_full97_opus5_t1_s300_c8_v1_glm52q_20260805_200828",
+  "note": "matched context+instructions: v1 pack with taubench-v1 (not v2 policy)",
+  "started_utc": "2026-08-05T20:09:28Z",
+  "do_not_commit": true
+}
