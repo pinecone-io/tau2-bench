@@ -1,0 +1,126 @@
+{
+  "curate": {
+    "chunks": {
+      "enabled": true
+    },
+    "artifacts": {
+      "enabled": true,
+      "artifact_model": "lite",
+      "artifact_types": [
+        {
+          "name": "Policy Doc",
+          "icon": "bi-file-earmark-text",
+          "kind": "entity",
+          "scope": "corpus",
+          "format": "sqlite",
+          "description": "One row per Rho-Bank knowledge-base document. Catalog of what the file is about so an agent can find the right source without reading it.",
+          "columns": [
+            {
+              "name": "title",
+              "type": "TEXT",
+              "description": "Document title as written in the first heading, verbatim."
+            },
+            {
+              "name": "category",
+              "type": "TEXT",
+              "description": "Product family, exactly one of: checking, savings, credit_card, business_checking, business_savings, business_credit, bnpl, everyone_pay, bank_accounts, referral, dispute, fraud, other."
+            },
+            {
+              "name": "product",
+              "type": "TEXT",
+              "description": "Canonical product name if the doc is about one product (e.g. 'Green Account', 'Sky Blue', 'Silver Rewards Card', 'Green Fee-Free Account'). Empty if the doc is general policy spanning many products."
+            },
+            {
+              "name": "topic",
+              "type": "TEXT",
+              "description": "What the doc is for, 2-6 words from: eligibility, rates_and_fees, apy_boost, opening, closing, rewards, travel, atm, wire, fraud, lost_stolen, pin_lock, dispute, provisional_credit, referral, limits, interest_credit, or similar."
+            },
+            {
+              "name": "key_facts",
+              "type": "TEXT",
+              "description": "2-6 sentences of every number and hard rule: APY/APR, fees, min/max, windows, tier caps, eligibility, tool names. Quote figures exactly. Empty only if the doc has none."
+            }
+          ],
+          "natural_key": ["title"]
+        },
+        {
+          "name": "Rate",
+          "icon": "bi-percent",
+          "kind": "entity",
+          "scope": "corpus",
+          "format": "sqlite",
+          "description": "One row per numeric fact (APY, fee, limit, window). A product overview has MANY rows — emit one per table cell and stated amount. Never collapse a doc to one row. Skip prose-only docs.",
+          "columns": [
+            {
+              "name": "product",
+              "type": "TEXT",
+              "description": "Canonical product this number applies to (e.g. 'Green Account', 'Evergreen Account', 'Sky Blue', 'Green Fee-Free Account'). Use 'all_checking' / 'all_savings' / 'all_cards' / 'all' when the rule is bank-wide."
+            },
+            {
+              "name": "metric",
+              "type": "TEXT",
+              "description": "Canonical metric: apy, apy_boost, apr, annual_fee, monthly_fee, min_balance, atm_foreign_fee, atm_reimbursement, dispute_limit, referral_bonus, referral_window_days, referral_cap, company_age_max_years, tenure_days, other."
+            },
+            {
+              "name": "value_num",
+              "type": "REAL",
+              "description": "The number only, no units. Percents as the percent itself (4.5 not 0.045). Dollars as the dollar amount (15 not 1500 cents). Days/counts as integers. Null only if the value is non-numeric."
+            },
+            {
+              "name": "value_text",
+              "type": "TEXT",
+              "description": "The value as written (e.g. '4.5%', '$15.00', '2 per 9 days', 'Entry Tier max 2')."
+            },
+            {
+              "name": "unit",
+              "type": "TEXT",
+              "description": "One of: percent, usd, count, days, years. Empty if not applicable."
+            },
+            {
+              "name": "condition",
+              "type": "TEXT",
+              "description": "When this number applies: tier, linked-account pairing, promo window, balance band, card present vs not, Rho-Bank ATM vs third-party, Entry/Mid/Premium/Elite. Empty if unconditional."
+            }
+          ],
+          "natural_key": ["product", "metric", "condition"]
+        },
+        {
+          "name": "Procedure",
+          "icon": "bi-list-check",
+          "kind": "entity",
+          "scope": "corpus",
+          "format": "sqlite",
+          "description": "One row per agent protocol (dispute, PIN lock, lost/stolen, referral, interest-credit). Multiple rows when the doc lists several rules. Skip marketing docs with no procedure.",
+          "columns": [
+            {
+              "name": "name",
+              "type": "TEXT",
+              "description": "Short procedure name: debit_dispute, atm_dispute, pin_lock, lost_stolen, freeze_card, replace_card, provisional_credit, referral, interest_credit, interest_discrepancy, account_open, account_close, transfer_human, or similar."
+            },
+            {
+              "name": "applies_to",
+              "type": "TEXT",
+              "description": "Product, card tier, or family this rule applies to (e.g. 'Entry Tier debit', 'Green Account', 'all debit cards', 'Sky Blue')."
+            },
+            {
+              "name": "trigger",
+              "type": "TEXT",
+              "description": "When to use this rule, 5-15 words (e.g. 'unauthorized debit after lost wallet', 'PIN locked after 3 failed attempts', 'customer wants to submit a checking referral')."
+            },
+            {
+              "name": "key_rule",
+              "type": "TEXT",
+              "description": "The hard constraint or required sequence, 1-3 sentences, with every number and required argument value quoted exactly (dispute_category enum values, delivery method, reason codes, rolling 9-day / 2-bonus cap, company age limit)."
+            },
+            {
+              "name": "tool_hint",
+              "type": "TEXT",
+              "description": "Discoverable or built-in tool name the doc names (e.g. file_debit_card_transaction_dispute_6281, reset_debit_card_pin_6284, submit_referral, apply_savings_account_credit_6831). Empty if none."
+            }
+          ],
+          "natural_key": ["name", "applies_to", "trigger"]
+        }
+      ]
+    }
+  }
+}
