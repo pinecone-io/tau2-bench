@@ -1062,6 +1062,7 @@ class TestRetrievalVariantRegistry:
             "grep_only",
             "bm25",
             "alltools",
+            "nexus_router",
         }
         assert expected.issubset(set(names))
         assert set(names) == set(RETRIEVAL_VARIANTS.keys())

@@ -31,6 +31,7 @@ from typing import (
 from tau2.domains.banking_knowledge.data_model import KnowledgeBase, TransactionalDB
 from tau2.domains.banking_knowledge.retrieval_toolkits import (
     KnowledgeToolsAllTools,
+    KnowledgeToolsNexusRouter,
     KnowledgeToolsPlain,
     KnowledgeToolsWithGrep,
     KnowledgeToolsWithKBSearch,
@@ -402,6 +403,7 @@ class RetrievalVariant:
     kb_search_dense: Optional[PipelineSpec] = None  # AllTools: dense KB_search_dense
     grep: Optional[GrepSpec] = None  # None -> no grep tool
     shell: Optional[ShellSpec] = None  # None -> no shell tool
+    nexus_router: bool = False  # True -> Nexus Router MCP toolset
     supports_top_k: bool = False
 
 
@@ -602,6 +604,12 @@ RETRIEVAL_VARIANTS: Dict[str, RetrievalVariant] = {
         embedder_type="openrouter",
         embedder_model=DEFAULT_DENSE_EMBEDDING_MODEL_OPENROUTER,
     ),
+    "nexus_router": RetrievalVariant(
+        name="nexus_router",
+        prompt_template=PROMPTS_DIR / "nexus_router.md",
+        build_prompt=standard_prompt,
+        nexus_router=True,
+    ),
 }
 
 RETRIEVAL_VARIANT_ALIASES = {
@@ -754,6 +762,15 @@ def build_tools(
             calls should still be logged to ``agent_discoverable_tools``
             for eval (typically the set required by the golden trajectory).
     """
+    if variant.nexus_router:
+        from tau2.domains.banking_knowledge.nexus_router_client import (
+            NexusRouterClient,
+        )
+
+        tools = KnowledgeToolsNexusRouter(db, NexusRouterClient())
+        tools.set_read_log_allowlist(read_log_allowlist)
+        return tools
+
     has_all_tools = (
         variant.kb_search_bm25 is not None
         and variant.kb_search_dense is not None

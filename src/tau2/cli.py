@@ -399,6 +399,7 @@ def add_run_args(parser):
             "Requires OPENAI_API_KEY: openai_embeddings*, alltools. "
             "Requires OPENROUTER_API_KEY: qwen_embeddings*, alltools-qwen. "
             "Requires sandbox-runtime: terminal_use*, alltools, alltools-qwen. "
+            "Nexus Router MCP: nexus_router (needs a live router + NEXUS_CONTEXT_SLUG). "
             "Default for banking_knowledge: alltools (BM25 + dense + shell)."
         ),
     )

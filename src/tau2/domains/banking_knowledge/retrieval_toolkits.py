@@ -14,8 +14,9 @@ MRO example for ``KnowledgeToolsWithKBSearchAndGrep``::
       └─ GrepMixin               → grep
 """
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
+from tau2.domains.banking_knowledge.nexus_router_mixin import NexusRouterMixin
 from tau2.domains.banking_knowledge.retrieval_mixins import (
     GrepMixin,
     KBSearchBm25AllToolsMixin,
@@ -110,3 +111,11 @@ class KnowledgeToolsAllTools(
         self._kb_bm25_pipeline = kb_bm25_pipeline
         self._kb_dense_pipeline = kb_dense_pipeline
         self._sandbox = sandbox
+
+
+class KnowledgeToolsNexusRouter(NexusRouterMixin, KnowledgeTools):
+    """Base banking tools + Nexus Router MCP primitives."""
+
+    def __init__(self, db: "TransactionalDB", nexus_router: Any):
+        super().__init__(db)
+        self._nexus_router = nexus_router

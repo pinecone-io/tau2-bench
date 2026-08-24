@@ -128,6 +128,36 @@ _ALL_VARIANTS = [
         {"KB_search_bm25", "KB_search_dense", "shell"},
         "all_tools",
     ),
+    (
+        "alltools-qwen",
+        {"KB_search_bm25", "KB_search_dense", "shell"},
+        "all_tools",
+    ),
+    (
+        "nexus_router",
+        {
+            "orient",
+            "outline_knowledge",
+            "list_artifacts",
+            "read_artifact",
+            "read_artifact_full",
+            "read_rosters",
+            "read_source",
+            "get_manifest",
+            "describe_type",
+            "search_knowledge",
+            "search_source",
+            "search_source_by_keyword",
+            "search_in_sources",
+            "cite_from_artifact",
+            "query_db",
+            "list_tables",
+            "relationships",
+            "walk_graph",
+            "get_fact",
+        },
+        None,
+    ),
 ]
 
 

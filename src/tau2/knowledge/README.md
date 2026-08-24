@@ -6,7 +6,7 @@ Domains with a knowledge base (currently just `banking_knowledge`) use a `--retr
 tau2 run --domain banking_knowledge --retrieval-config <config_name> --agent-llm gpt-4.1 --user-llm gpt-4.1
 ```
 
-If `--retrieval-config` is omitted for `banking_knowledge`, the default is **`alltools`**: BM25 search, dense embedding search, and read-only shell (see below). Choose an offline-only config such as **`bm25`** if you want no API keys or sandbox.
+If `--retrieval-config` is omitted for `banking_knowledge`, the default is **`alltools`**: BM25 search, dense embedding search, and read-only shell (see below). Choose an offline-only config such as **`bm25`** if you want no API keys or sandbox. Use **`nexus_router`** to retrieve via a live Nexus Router MCP instead.
 
 ### AllTools (`alltools`, `alltools-qwen`)
 
@@ -36,6 +36,7 @@ Requirements: **sandbox-runtime** for `shell`, and an embedding API for dense se
 | `terminal_use_write` | `shell` | `sandbox-runtime` (see below) |
 | `alltools` | `KB_search_bm25`, `KB_search_dense`, `shell` | BM25 offline + OpenAI dense embeddings + sandbox-runtime |
 | `alltools-qwen` | `KB_search_bm25`, `KB_search_dense`, `shell` | BM25 offline + Qwen dense embeddings + sandbox-runtime |
+| `nexus_router` | Nexus Router MCP (`orient`, `search_*`, `query_db`, …) | Live router at `NEXUS_ROUTER_URL` (default `http://localhost/mcp/router`) + `NEXUS_CONTEXT_SLUG` + `PINECONE_API_KEY` |
 
 The `bm25`, `openai_embeddings`, and `qwen_embeddings` configs can also be combined with:
 - `_reranker` suffix — adds an LLM reranker postprocessor (requires `OPENAI_API_KEY`)
