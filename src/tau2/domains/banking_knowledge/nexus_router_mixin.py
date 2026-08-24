@@ -18,8 +18,8 @@ class NexusRouterMixin(metaclass=ToolKitType):
     def orient(self) -> str:
         """Gist of the curated Nexus context. Call this first.
 
-        Returns declared artifact types, outline, rosters, and structured
-        DB schema. No LLM. Do not re-orient unless the context changes.
+        How to retrieve, schema, product catalog, rate/procedure samples.
+        SQL first after this. Do not re-orient unless the context changes.
         """
         return self._nexus_router.call("orient")
 
@@ -140,8 +140,10 @@ class NexusRouterMixin(metaclass=ToolKitType):
     def query_db(self, sql: str) -> str:
         """Read-only SQL against the context sqlite (SELECT/WITH/PRAGMA/EXPLAIN).
 
-        Tables include policy_doc (title, category, product, topic) plus
-        artifacts, sources, kv, relationships. COUNT/list-all: use this first.
+        Tables: policy_doc (title, category, product, topic, key_facts),
+        rate (product, metric, value_num, value_text, condition),
+        procedure (name, applies_to, trigger, key_rule, tool_hint),
+        plus artifacts/sources/kv. Prefer this over read_source.
         """
         return self._nexus_router.call("query_db", {"sql": sql})
 
