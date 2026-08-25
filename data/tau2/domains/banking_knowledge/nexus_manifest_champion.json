@@ -1,0 +1,554 @@
+{
+  "curate": {
+    "chunks": {
+      "chunking": {
+        "target_size": 768,
+        "overlap": 128
+      }
+    },
+    "artifacts": {
+      "enabled": true,
+      "artifact_model": "standard",
+      "max_tokens": 4000,
+      "max_doc_chars": 120000,
+      "extraction_window_chars": 50000,
+      "min_doc_count": 1,
+      "max_artifacts_per_type": 500,
+      "artifact_types": [
+        {
+          "name": "doc_guard",
+          "kind": "summary",
+          "scope": "document",
+          "format": "markdown",
+          "description": "One-line doc type label only (product|procedure|policy|other). Guard type for build population. No long summaries."
+        },
+        {
+          "name": "product_profile",
+          "kind": "entity",
+          "scope": "document",
+          "format": "sqlite",
+          "description": "ONE row if ONE product (single H1). product=EXACT H1. family=business|personal. product_class=checking|savings|credit_card|other. account_class_enum: biz checking=short color (Cobalt Blue); biz savings=official Saver Account; personal savings=name endin...",
+          "natural_key": [
+            "product",
+            "source_doc"
+          ],
+          "columns": [
+            {
+              "name": "product",
+              "type": "TEXT",
+              "description": "Exact H1 title only; preserve Plus/Fee-Free/color names; never substitute Gold Savings for Silver Plus"
+            },
+            {
+              "name": "family",
+              "type": "TEXT",
+              "description": "personal or business from path/title only"
+            },
+            {
+              "name": "product_class",
+              "type": "TEXT",
+              "description": "checking|savings|credit_card|other"
+            },
+            {
+              "name": "signup_bonus",
+              "type": "TEXT",
+              "description": "New-customer sign-up bonus amount type spend window if in THIS doc else empty"
+            },
+            {
+              "name": "annual_fee_num",
+              "type": "REAL",
+              "description": "Annual fee in dollars only e.g. 0,50,200; empty if not stated; do not invent"
+            },
+            {
+              "name": "enum_card_type",
+              "type": "TEXT",
+              "description": "Exact apply_for_credit_card card_type if credit_card; bare name only; never (personal)/(Personal)"
+            },
+            {
+              "name": "annual_fee",
+              "type": "TEXT",
+              "description": "Annual fee with $; also note first-year waiver if THIS doc states it"
+            },
+            {
+              "name": "monthly_fee",
+              "type": "TEXT",
+              "description": "Monthly maintenance fee with $ if stated"
+            },
+            {
+              "name": "fee_waiver",
+              "type": "TEXT",
+              "description": "How monthly/annual fee is waived if stated"
+            },
+            {
+              "name": "apy",
+              "type": "TEXT",
+              "description": "Base APY or primary rate; tiers if only tiers exist"
+            },
+            {
+              "name": "apy_tiers_or_boosts",
+              "type": "TEXT",
+              "description": "Tier APYs and relationship/card boosts if stated"
+            },
+            {
+              "name": "min_open",
+              "type": "TEXT",
+              "description": "Minimum opening deposit if stated"
+            },
+            {
+              "name": "min_balance",
+              "type": "TEXT",
+              "description": "Ongoing minimum balance if stated"
+            },
+            {
+              "name": "cash_back",
+              "type": "TEXT",
+              "description": "Flat/category cash-back rates AND any sign-up bonus amounts if in THIS doc"
+            },
+            {
+              "name": "foreign_fee",
+              "type": "TEXT",
+              "description": "Foreign transaction fee % or 0%"
+            },
+            {
+              "name": "atm_terms",
+              "type": "TEXT",
+              "description": "ATM fees + free counts + rebate caps from THIS doc only. Prefer structured phrases: free_foreign_n=N; free_domestic_oof_n=N; domestic_oof_fee=$X; foreign_fee=\u2026; rebate_cap=$Y/mo. Quote exact numbers."
+            },
+            {
+              "name": "credit_limit_range",
+              "type": "TEXT",
+              "description": "Min\u2013max credit limit if stated"
+            },
+            {
+              "name": "credit_score_min",
+              "type": "TEXT",
+              "description": "Min FICO/credit score required to apply if stated; else empty"
+            },
+            {
+              "name": "purchase_protection",
+              "type": "TEXT",
+              "description": "Purchase protection yes/days or empty"
+            },
+            {
+              "name": "eco",
+              "type": "TEXT",
+              "description": "yes if doc states eco/green/sustainable focus; else empty"
+            },
+            {
+              "name": "multi_currency",
+              "type": "TEXT",
+              "description": "yes or currency count if multi-currency"
+            },
+            {
+              "name": "overdraft_fee",
+              "type": "TEXT",
+              "description": "Overdraft fee if stated"
+            },
+            {
+              "name": "eligibility_notes",
+              "type": "TEXT",
+              "description": "Hard gates from THIS doc: income, tenure, personal/business only, subscription; compress"
+            },
+            {
+              "name": "notable_perks",
+              "type": "TEXT",
+              "description": "Distinct perks compressed (not fees/APY already in other columns)"
+            },
+            {
+              "name": "source_doc",
+              "type": "TEXT",
+              "description": "Source filename or document title"
+            },
+            {
+              "name": "account_class_enum",
+              "type": "TEXT",
+              "description": "Bare open_bank account_class only; strip Business Checking suffixes and (savings)/(checking) parentheticals."
+            },
+            {
+              "name": "referral_account_type",
+              "type": "TEXT",
+              "description": "Bare submit_referral account_type if this product is a referral target; else empty."
+            }
+          ]
+        },
+        {
+          "name": "atm_fee_terms",
+          "kind": "entity",
+          "scope": "document",
+          "format": "sqlite",
+          "description": "ONE row if THIS doc states ATM fees, free ATM counts, or monthly ATM rebates for ONE product. product=EXACT H1. family=personal|business. Numbers ONLY as written\u2014never invent. free_foreign_atm_n=monthly free foreign ATM count; free_domestic_oof_n=free d...",
+          "natural_key": [
+            "product",
+            "source_doc"
+          ],
+          "columns": [
+            {
+              "name": "product",
+              "type": "TEXT",
+              "description": "Exact product H1 from THIS doc"
+            },
+            {
+              "name": "family",
+              "type": "TEXT",
+              "description": "personal or business"
+            },
+            {
+              "name": "product_class",
+              "type": "TEXT",
+              "description": "checking|savings|other"
+            },
+            {
+              "name": "account_class_enum",
+              "type": "TEXT",
+              "description": "Bare open_bank class if known; strip suffixes"
+            },
+            {
+              "name": "free_foreign_atm_n",
+              "type": "TEXT",
+              "description": "Integer monthly free foreign ATM withdrawals if stated else empty"
+            },
+            {
+              "name": "free_domestic_oof_n",
+              "type": "TEXT",
+              "description": "Integer free domestic out-of-network ATMs if stated else empty"
+            },
+            {
+              "name": "domestic_oof_fee",
+              "type": "TEXT",
+              "description": "Rho fee per domestic OOF ATM as written e.g. $2.00"
+            },
+            {
+              "name": "foreign_fee_formula",
+              "type": "TEXT",
+              "description": "Foreign ATM fee formula as written e.g. $4.00 each after free OR 2% min $3"
+            },
+            {
+              "name": "rebate_cap_monthly",
+              "type": "TEXT",
+              "description": "Monthly rebate $ cap for OOF ATM if stated e.g. $15"
+            },
+            {
+              "name": "rebate_covers",
+              "type": "TEXT",
+              "description": "rho_fee|operator_surcharge|both|empty"
+            },
+            {
+              "name": "worked_example",
+              "type": "TEXT",
+              "description": "One numeric example from THIS doc if present (e.g. 5 foreign with free 2 \u2192 3 fees)"
+            },
+            {
+              "name": "source_doc",
+              "type": "TEXT",
+              "description": "Source filename or title"
+            }
+          ]
+        },
+        {
+          "name": "internal_tool",
+          "kind": "entity",
+          "scope": "document",
+          "format": "sqlite",
+          "description": "ONE row/tool_name_NNNN in THIS Internal doc. tool_name=exact _NNNN. tool_kind=agent|user|standard. purpose=one line. args_json=JSON key template. preconditions=verify/prior tools. User tools require give then call_discoverable_user_tool (args on call on...",
+          "natural_key": [
+            "tool_name",
+            "source_doc"
+          ],
+          "columns": [
+            {
+              "name": "tool_name",
+              "type": "TEXT",
+              "description": "Exact tool_name_NNNN as written in THIS doc"
+            },
+            {
+              "name": "tool_kind",
+              "type": "TEXT",
+              "description": "agent|user|standard as used in THIS doc"
+            },
+            {
+              "name": "purpose",
+              "type": "TEXT",
+              "description": "What the tool does in one line"
+            },
+            {
+              "name": "args_json",
+              "type": "TEXT",
+              "description": "JSON object template of required arg keys with empty string values; keys only from THIS doc"
+            },
+            {
+              "name": "key_args",
+              "type": "TEXT",
+              "description": "Required argument names/types as written"
+            },
+            {
+              "name": "preconditions",
+              "type": "TEXT",
+              "description": "Eligibility, identity verify, or prior tools required before use if stated"
+            },
+            {
+              "name": "source_doc",
+              "type": "TEXT",
+              "description": "Source filename or document title"
+            }
+          ]
+        },
+        {
+          "name": "tool_step",
+          "kind": "entity",
+          "scope": "document",
+          "format": "sqlite",
+          "description": "Ordered steps THIS Internal doc. ONE row/step. procedure; step_ord; action; tool_name exact _NNNN or STANDARD apply_for_credit_card/submit_referral/get_referrals/log_verification (never mark those as unlock). args_hint bare enums + tier $; FULL retentio...",
+          "natural_key": [
+            "procedure",
+            "step_ord",
+            "source_doc"
+          ],
+          "columns": [
+            {
+              "name": "procedure",
+              "type": "TEXT",
+              "description": "Short procedure name from doc heading"
+            },
+            {
+              "name": "step_ord",
+              "type": "INTEGER",
+              "description": "1-based step order in THIS doc"
+            },
+            {
+              "name": "action",
+              "type": "TEXT",
+              "description": "What the agent does at this step"
+            },
+            {
+              "name": "tool_name",
+              "type": "TEXT",
+              "description": "tool_name_NNNN if used else empty"
+            },
+            {
+              "name": "trap_or_check",
+              "type": "TEXT",
+              "description": "Eligibility trap, verify failure path, or policy check at this step"
+            },
+            {
+              "name": "source_doc",
+              "type": "TEXT",
+              "description": "Source filename or document title"
+            },
+            {
+              "name": "args_hint",
+              "type": "TEXT",
+              "description": "Exact argument templates/field values if THIS doc specifies them"
+            }
+          ]
+        },
+        {
+          "name": "savings_card_boost",
+          "kind": "entity",
+          "scope": "document",
+          "format": "sqlite",
+          "description": "ONE row per card\u2192savings APY relationship boost in THIS doc. savings_product + card_product = EXACT titles. boost_apy=additive string as written (e.g. +0.45%). conditions=tier/min balance/subscription. Also capture base savings APY context in conditions...",
+          "natural_key": [
+            "savings_product",
+            "card_product",
+            "source_doc"
+          ],
+          "columns": [
+            {
+              "name": "savings_product",
+              "type": "TEXT",
+              "description": "Exact savings product title as written"
+            },
+            {
+              "name": "card_product",
+              "type": "TEXT",
+              "description": "Exact card product title that grants the boost"
+            },
+            {
+              "name": "boost_apy",
+              "type": "TEXT",
+              "description": "Additive APY boost as written e.g. +0.45%"
+            },
+            {
+              "name": "conditions",
+              "type": "TEXT",
+              "description": "Tier, min balance, subscription, or base APY context if stated"
+            },
+            {
+              "name": "source_doc",
+              "type": "TEXT",
+              "description": "Source filename or document title"
+            }
+          ]
+        },
+        {
+          "name": "product_select_rule",
+          "kind": "entity",
+          "scope": "document",
+          "format": "sqlite",
+          "description": "ONE row per product page for FILTER-THEN-RANK. product=EXACT H1. family=personal|business. product_class=checking|savings|credit_card. enum_card_type=BARE tool enum (no parentheticals). account_class_enum bare. annual_fee_num number. fee_zero=yes|no. ha...",
+          "natural_key": [
+            "product",
+            "source_doc"
+          ],
+          "columns": [
+            {
+              "name": "product",
+              "type": "TEXT",
+              "description": "Exact H1 only: e.g. Silver Plus Account, Navy Blue, Sky Blue, Green Fee-Free Account, EcoCard \u2014 never Gold Savings Account unless H1 says that"
+            },
+            {
+              "name": "family",
+              "type": "TEXT",
+              "description": "personal or business"
+            },
+            {
+              "name": "product_class",
+              "type": "TEXT",
+              "description": "checking|savings|credit_card|other"
+            },
+            {
+              "name": "wins_when",
+              "type": "TEXT",
+              "description": "Bullet hard wins from THIS doc: eco/green, ATM free/rebate, FTF 0%, fee waiver, min credit score, business-only, promo date window"
+            },
+            {
+              "name": "loses_when",
+              "type": "TEXT",
+              "description": "When NOT to pick: failed score, wrong family, expired promo, fee too high if stated"
+            },
+            {
+              "name": "rank_hint",
+              "type": "TEXT",
+              "description": "If multiple pass: maximize cash_back OR apy OR minimize fee as THIS doc emphasizes"
+            },
+            {
+              "name": "prestige",
+              "type": "TEXT",
+              "description": "yes if high-tier prestige naming else empty"
+            },
+            {
+              "name": "source_doc",
+              "type": "TEXT",
+              "description": "Source filename or title"
+            },
+            {
+              "name": "promo_window",
+              "type": "TEXT",
+              "description": "Active promo date range if THIS doc states temporary routing/promotion; else empty"
+            },
+            {
+              "name": "enum_card_type",
+              "type": "TEXT",
+              "description": "Bare card_type enum for tools if credit card else empty; no parentheticals"
+            },
+            {
+              "name": "fee_zero",
+              "type": "TEXT",
+              "description": "yes if annual fee $0; no if fee>0; empty if unknown"
+            },
+            {
+              "name": "everyday_cashback",
+              "type": "TEXT",
+              "description": "Base/everyday cash-back % as written e.g. 2.5% or 10% or 1%"
+            },
+            {
+              "name": "account_class_enum",
+              "type": "TEXT",
+              "description": "Bare open_bank account_class only; strip Business Checking suffixes and (savings)/(checking) parentheticals."
+            },
+            {
+              "name": "annual_fee_num",
+              "type": "REAL",
+              "description": "Annual fee dollars as number e.g. 0 50 200; empty if unknown"
+            },
+            {
+              "name": "hard_filters",
+              "type": "TEXT",
+              "description": "Semicolon hard gates from THIS doc: max_fee=0; personal_only; business_only; ftf_zero; eco; mobile_deposit_10k; etc."
+            },
+            {
+              "name": "rank_metric",
+              "type": "TEXT",
+              "description": "cash_back|apy|fee|signup primary ranking axis of THIS product doc"
+            },
+            {
+              "name": "rho_subscription_relevant",
+              "type": "TEXT",
+              "description": "yes if FTF/benefits change with Rho-Bank+ subscription per THIS doc else empty"
+            }
+          ]
+        },
+        {
+          "name": "transfer_protocol",
+          "kind": "entity",
+          "scope": "document",
+          "format": "sqlite",
+          "description": "ONE row/transfer reason. reason_code=snake_case. when_to_use/do_not_use_when. unconfirmed_external_communication=unverified mailed/external claim (no refuse-redeem step). customer_demands_after_unavailable_offer_refusal=ONLY after refuse flyer attach th...",
+          "natural_key": [
+            "reason_code",
+            "source_doc"
+          ],
+          "columns": [
+            {
+              "name": "reason_code",
+              "type": "TEXT",
+              "description": "Exact transfer reason code as written"
+            },
+            {
+              "name": "when_to_use",
+              "type": "TEXT",
+              "description": "When this reason applies (situation pattern from THIS doc)"
+            },
+            {
+              "name": "tool_name",
+              "type": "TEXT",
+              "description": "Exact tool_name_NNNN for transfer if stated"
+            },
+            {
+              "name": "before_transfer",
+              "type": "TEXT",
+              "description": "Required verify/eligibility steps before transfer if stated"
+            },
+            {
+              "name": "source_doc",
+              "type": "TEXT",
+              "description": "Source filename or title"
+            },
+            {
+              "name": "do_not_use_when",
+              "type": "TEXT",
+              "description": "Near-miss situations that must use a different reason_code"
+            },
+            {
+              "name": "priority",
+              "type": "TEXT",
+              "description": "Tier or priority if stated else empty"
+            }
+          ]
+        },
+        {
+          "name": "scenario_playbook",
+          "kind": "topic",
+          "scope": "corpus",
+          "format": "markdown",
+          "description": "Thin routing from sqlite. product bare account_class_enum by family. apply_for_credit_card+submit_referral are STANDARD never unlock. retention found_better: apply card then tier credit $5/$20/$50. dual open: both products. interest: balance*(e-a)/100/1...",
+          "coverage": [
+            "product_select: bare account_class_enum by family; fee-waiver near typical balance",
+            "standard_tools: apply_for_credit_card submit_referral get_referrals never unlock",
+            "retention_found_better: apply_for_credit_card before close-only",
+            "retention_credit_tiers: entry5 mid20 premium50",
+            "dual_product_open: open/apply every product then optional transfer",
+            "interest_monthly: balance*(expected_apy-actual_apy)/100/12",
+            "referral_max_bonus: highest referrer under deposit threshold; verify then submit",
+            "discoverable_user: give name-only then user call per txn",
+            "cli: deny pay approve not transfer",
+            "enums: no Business Checking suffixes; no (savings) parentheticals"
+          ]
+        }
+      ],
+      "edge_types": [],
+      "mention_max_chars": 800,
+      "max_mentions_per_artifact": 64,
+      "mention_context_chars": 16000
+    }
+  }
+}

@@ -140,10 +140,9 @@ class NexusRouterMixin(metaclass=ToolKitType):
     def query_db(self, sql: str) -> str:
         """Read-only SQL against the context sqlite (SELECT/WITH/PRAGMA/EXPLAIN).
 
-        Tables: policy_doc (title, category, product, topic, key_facts),
-        rate (product, metric, value_num, value_text, condition),
-        procedure (name, applies_to, trigger, key_rule, tool_hint),
-        plus artifacts/sources/kv. Prefer this over read_source.
+        Tables: product_profile, product_select_rule, atm_fee_terms,
+        savings_card_boost, internal_tool, tool_step, transfer_protocol
+        (plus policy_doc/rate/procedure if present). Prefer SQL.
         """
         return self._nexus_router.call("query_db", {"sql": sql})
 
